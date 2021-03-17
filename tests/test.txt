@@ -1,0 +1,8 @@
+VARN a = 0.9;
+VARN a + a ;
+VARN a :;
+;
+VARS b =m;
+VARS b + b ;
+VARS b :;
+;

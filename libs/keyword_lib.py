@@ -9,7 +9,9 @@ def hasKeyWord(line, keyword):
         return False
 
 def endLineRespected(line):
-    if line[-1] in ';^': return True
-    else: 
-        print('Expected \';\' or \'^\' at the end of the following line: \n  >> ' + line + ' << \n')
-        return False
+    if len(line) > 0:
+        if line[-1] in ';^': 
+            return True
+        else: 
+            print('Expected \';\' or \'^\' at the end of the following line: \n  >> ' + line + ' << \n')
+            return False
