@@ -35,7 +35,7 @@ def varn(line):
                 isexist = True
                 print(vn.getValue())
         if not isexist:
-            print('VARN Error: \n >> ' + ls[0] + ' << don\'t exist')
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
     elif '+' in line:
         ls = line.split('+')
         isexist1 = False
@@ -48,10 +48,28 @@ def varn(line):
                         isexist2 = True
                         vn1.setValue(vn1.getValue()+vn2.getValue())
         if not isexist1:
-            print('VARN Error: \n >> ' + ls[0] + ' << don\'t exist')
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('VARN Error: \n >> ' + ls[1] + ' << don\'t exist')
+                print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    elif '>' in line:
+        ls = line.split('>')
+        isexist = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist = True
+                vn.incValue()
+        if not isexist:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+    elif '<' in line:
+        ls = line.split('<')
+        isexist = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist = True
+                vn.decValue()
+        if not isexist:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
 
 def vars(line):
     if '=' in line:
@@ -71,7 +89,7 @@ def vars(line):
                 isexist = True
                 print(vs.getValue())
         if not isexist:
-            print('VARS Error: \n >> ' + ls[0] + ' << don\'t exist')
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
     elif '+' in line:
         ls = line.split('+')
         isexist1 = False
@@ -84,7 +102,25 @@ def vars(line):
                         isexist2 = True
                         vs1.setValue(vs1.getValue()+vs2.getValue())
         if not isexist1:
-            print('VARS Error: \n >> ' + ls[0] + ' << don\'t exist')
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('VARS Error: \n >> ' + ls[1] + ' << don\'t exist')
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    elif '>' in line:
+        ls = line.split('>')
+        isexist = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist = True
+                vs.incValue()
+        if not isexist:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+    elif '<' in line:
+        ls = line.split('<')
+        isexist = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist = True
+                vs.decValue()
+        if not isexist:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')

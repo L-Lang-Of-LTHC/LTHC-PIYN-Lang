@@ -14,17 +14,20 @@ import libs.readline as rl
 def run():
     wantedfile = ''
     wantedfile = input('File > ')
-    wantedfile = open(wantedfile)
+    try:
+        wantedfile = open(wantedfile)
 
-    tlines = wantedfile.readlines()
-    lines = []
-    for i in tlines:
-        lines.append(i.replace('\n',''))
+        tlines = wantedfile.readlines()
+        lines = []
+        for i in tlines:
+            lines.append(i.replace('\n',''))
 
-    for i in lines:
-        rl.readline(i, False)
+        for i in lines:
+            rl.readline(i, False)
 
-    wantedfile.close()
+        wantedfile.close()
+    except:
+        print('\nFile not found\n')
 
     t = None
     while t == None:
