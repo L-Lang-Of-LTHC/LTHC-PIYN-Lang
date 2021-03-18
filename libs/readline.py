@@ -14,6 +14,7 @@ import libs.sys_methods as sm
 V = 'VARN'
 S = 'VARS'
 SA = 'VARSA'
+SS = 'SSUM'
 
 ############
 # METHODS
@@ -34,6 +35,10 @@ def readline(line,inshell):
             line = line[len(S):len(line)]
             sm.vars(line)
             already = True
+        elif kl.hasKeyWord(line, SS) and not already:
+            line = line[len(SS):len(line)]
+            sm.ssum(line)
+            already = True
     else:
         if kl.endLineRespected(line):
             line = line[0:-1]
@@ -49,4 +54,8 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, S) and not already:
                 line = line[len(S):len(line)]
                 sm.vars(line)
+                already = True
+            elif kl.hasKeyWord(line, SS) and not already:
+                line = line[len(SS):len(line)]
+                sm.ssum(line)
                 already = True

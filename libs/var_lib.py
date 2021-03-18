@@ -69,6 +69,13 @@ class StrVar:
         for i in self.value:
             temp += ALLOWED_CHARS[(ALLOWED_CHARS.find(i)-1)%len(ALLOWED_CHARS)]
         self.value = temp
+    
+    #SPECIAL GET METHOD
+    def ssum(self):
+        temp = 0
+        for i in self.value:
+            temp += ALLOWED_CHARS.find(i)
+        return temp
 
 #StrVarAll
 class StrVarAll:

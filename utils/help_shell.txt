@@ -1,6 +1,6 @@
   > Shell help >  
     
-    /!\ Warning: The variable name are extremly case sensitive
+    /!\ Warning: The variables' names are extremly case sensitive
     
     Numeric variable type:
       
@@ -73,6 +73,12 @@
         VARSA name1 #
             Cast the value of VARS variable named name1 to a VARSA value 
             which is the new value of the VARSA variable named name1 
+    
+    Advanced simple instructions:
+        
+        SSUM name1 = name2 
+            set the value of the VARN type variable named name1 to the "sum" of all char
+            contained in the VARS type variable named name2 
         
   < Shell help <  
   
