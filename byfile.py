@@ -15,7 +15,7 @@ def run():
     wantedfile = ''
     wantedfile = input('File > ')
     try:
-        wantedfile = open(wantedfile)
+        wantedfile = open(wantedfile, 'r', encoding='utf-8')
 
         tlines = wantedfile.readlines()
         lines = []

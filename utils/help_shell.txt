@@ -1,0 +1,56 @@
+  > Shell help >  
+    
+    /!\ Warning: The variable name are extremly case sensitive
+    
+    Numeric variable type:
+      
+        VARN name = value
+            Create a variable with a value = value or change the value of an existant variable to value
+        VARN name >
+            Print the value of the variable
+        VARN name <
+            A user input who ask to user to enter a value for the variable
+        VARN name ++
+            Increment the value of the variable
+        VARN name --
+            Decrement the value of the variable
+        VARN name1 + name2 
+            Set the value of name1 to name1 + name2 
+        VARN name1 - name2 
+            Set the value of name1 to name1 - name2 
+        VARN name1 * name2 
+            Set the value of name1 to name1 * name2 
+        VARN name1 / name2 
+            Set the value of name1 to name1 / name2 
+        VARN name1 % name2 
+            Set the value of name1 to name1 % name2 
+    
+    Limited char string type:
+        
+        Allowed char: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\"'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü² ඞ
+
+        VARS name = value
+            Create a variable with a value = value or change the value of an existant variable to value
+        VARS name >
+            Print the value of the variable
+        VARS name <
+            A user input who ask to user to enter a value for the variable
+        VARS name ++
+            Increment the value of the variable
+        VARS name --
+            Decrement the value of the variable
+        VARS name1 + name2 
+            Set the value of name1 to name1 + name2 
+    
+    String type:
+        
+        VARSA name = value
+            Create a variable with a value = value or change the value of an existant variable to value
+        VARSA name >
+            Print the value of the variable
+        VARSA name <
+            A user input who ask to user to enter a value for the variable
+        VARSA name1 + name2 
+            Set the value of name1 to name1 + name2 
+  < Shell help <  
+  
