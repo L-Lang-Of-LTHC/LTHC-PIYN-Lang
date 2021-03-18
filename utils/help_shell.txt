@@ -24,6 +24,15 @@
             Set the value of name1 to name1 / name2 
         VARN name1 % name2 
             Set the value of name1 to name1 % name2 
+        VARN name1 #sa
+            Cast the value of VARSA variable named name1 to a VARN value 
+            which is the new value of the VARN variable named name1 
+        VARN name1 #s
+            Cast the value of VARS variable named name1 to a VARN value 
+            which is the new value of the VARN variable named name1 
+        VARN name1 #
+            Cast the value of VARS variable named name1 to a VARN value 
+            which is the new value of the VARN variable named name1 
     
     Limited char string type:
         
@@ -41,6 +50,12 @@
             Decrement the value of the variable
         VARS name1 + name2 
             Set the value of name1 to name1 + name2 
+        VARS name1 #n
+            Cast the value of VARN variable named name1 to a VARS value 
+            which is the new value of the VARS variable named name1 
+        VARS name1 #
+            Cast the value of VARSA variable named name1 to a VARS value 
+            which is the new value of the VARS variable named name1 
     
     String type:
         
@@ -52,5 +67,12 @@
             A user input who ask to user to enter a value for the variable
         VARSA name1 + name2 
             Set the value of name1 to name1 + name2 
+        VARSA name1 #n
+            Cast the value of VARN variable named name1 to a VARSA value 
+            which is the new value of the VARSA variable named name1 
+        VARSA name1 #
+            Cast the value of VARS variable named name1 to a VARSA value 
+            which is the new value of the VARSA variable named name1 
+        
   < Shell help <  
   

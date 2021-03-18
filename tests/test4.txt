@@ -1,0 +1,22 @@
+VARN a = 9;
+VARS a = 8;
+VARN a #;
+VARN a >;
+VARS a <;
+VARN a #s;
+VARN a >;
+VARSA a =-21.7;
+VARN a #sa;
+VARN a >;
+VARS a #n;
+VARS a >;
+VARSA a <;
+VARS a #;
+VARS a >;
+VARN a <;
+VARSA a #n;
+VARSA a >;
+VARS a = abn lo;
+VARSA a #;
+VARSA a >;
+^

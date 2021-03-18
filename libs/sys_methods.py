@@ -159,6 +159,66 @@ def varn(line):
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
+    elif '#sa' in line and not already:
+        ls = line.split('#sa')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varsalist:
+                    if ls[0] == vs.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vs.getValue()))
+                        except:
+                            print('\nCasting error\n')
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '#s' in line and not already:
+        ls = line.split('#s')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varslist:
+                    if ls[0] == vs.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vs.getValue()))
+                        except:
+                            print('\nCasting error\n')
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '#' in line and not already:
+        ls = line.split('#')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varslist:
+                    if ls[0] == vs.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vs.getValue()))
+                        except:
+                            print('\nCasting error\n')
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
 
 def vars(line):
     already = False
@@ -227,6 +287,40 @@ def vars(line):
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
+    elif '#n' in line and not already:
+        ls = line.split('#n')
+        isexist1 = False
+        isexist2 = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist1 = True
+                for vn in varnlist:
+                    if ls[0] == vn.getName():
+                        isexist2 = True
+                        vs.setValue(str(vn.getValue()))
+        if not isexist1:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '#' in line and not already:
+        ls = line.split('#')
+        isexist1 = False
+        isexist2 = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist1 = True
+                for vs2 in varsalist:
+                    if ls[0] == vs2.getName():
+                        isexist2 = True
+                        vs.setValue(vs2.getValue())
+        if not isexist1:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
 
 def varsa(line):
     already = False
@@ -274,4 +368,38 @@ def varsa(line):
         else:
             if not isexist2:
                 print('\nVARSA Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    elif '#n' in line and not already:
+        ls = line.split('#n')
+        isexist1 = False
+        isexist2 = False
+        for vs in varsalist:
+            if ls[0] == vs.getName():
+                isexist1 = True
+                for vn in varnlist:
+                    if ls[0] == vn.getName():
+                        isexist2 = True
+                        vs.setValue(str(vn.getValue()))
+        if not isexist1:
+            print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '#' in line and not already:
+        ls = line.split('#')
+        isexist1 = False
+        isexist2 = False
+        for vs in varsalist:
+            if ls[0] == vs.getName():
+                isexist1 = True
+                for vs2 in varslist:
+                    if ls[0] == vs2.getName():
+                        isexist2 = True
+                        vs.setValue(vs2.getValue())
+        if not isexist1:
+            print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
