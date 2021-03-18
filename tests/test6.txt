@@ -1,0 +1,10 @@
+VARS a =ABCabc  àé\n;
+VARS a >;
+^
+VARN a = 0;
+SSUM a = a ;
+VARN a >;
+^
+HSSUM a = a ;
+VARN a >;
+^

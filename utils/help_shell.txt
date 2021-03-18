@@ -80,5 +80,11 @@
             set the value of the VARN type variable named name1 to the "sum" of all char
             contained in the VARS type variable named name2 
         
+        HSSUM name1 = name2 
+            set the value of the VARN type variable named name1 to the "special 'sum' " of all char
+            contained in the VARS type variable named name2 
+        
+        /!\ The result of HSSUM is often different of the result of SSUM
+        
   < Shell help <  
   

@@ -76,6 +76,11 @@ class StrVar:
         for i in self.value:
             temp += ALLOWED_CHARS.find(i)
         return temp
+    def hssum(self):
+        temp = 0
+        for i in self.value:
+            temp += (ALLOWED_CHARS.find(i) % int(len(ALLOWED_CHARS) / 2))
+        return temp
 
 #StrVarAll
 class StrVarAll:

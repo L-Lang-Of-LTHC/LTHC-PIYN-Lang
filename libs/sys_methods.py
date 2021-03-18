@@ -424,3 +424,24 @@ def ssum(line):
         already = True
     else:
         print('\nSSUM Syntax Error: expected \'=\' between variables\' name')
+
+def hssum(line):
+    if '=' in line:
+        isexist1 = False
+        isexist2 = False
+        ls = line.split('=')
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varslist:
+                    if ls[1] == vs.getName():
+                        isexist2 = True
+                        vn.setValue(vs.hssum())
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    else:
+        print('\nHSSUM Syntax Error: expected \'=\' between variables\' name')
