@@ -13,6 +13,10 @@ VARN a * temp ;
 VARN a :;
 VARN temp / a ;
 VARN temp :;
+VARN u = 15;
+VARN v = 2;
+VARN u % v ;
+VARN u :;
 ^
 ^
 VARS b =m;
