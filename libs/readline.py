@@ -13,6 +13,7 @@ import libs.sys_methods as sm
 ##############
 V = 'VARN'
 S = 'VARS'
+SA = 'VARSA'
 
 ############
 # METHODS
@@ -20,18 +21,32 @@ S = 'VARS'
 
 def readline(line,inshell):
     if inshell:
-        if kl.hasKeyWord(line, V):
+        already = False
+        if kl.hasKeyWord(line, V) and not already:
             line = line[len(V):len(line)]
             sm.varn(line)
-        elif kl.hasKeyWord(line, S):
+            already = True
+        elif kl.hasKeyWord(line, SA) and not already:
+            line = line[len(SA):len(line)]
+            sm.varsa(line)
+            already = True
+        elif kl.hasKeyWord(line, S) and not already:
             line = line[len(S):len(line)]
             sm.vars(line)
+            already = True
     else:
         if kl.endLineRespected(line):
             line = line[0:-1]
-            if kl.hasKeyWord(line, V):
+            already = False
+            if kl.hasKeyWord(line, V) and not already:
                 line = line[len(V):len(line)]
                 sm.varn(line)
-            elif kl.hasKeyWord(line, S):
+                already = True
+            elif kl.hasKeyWord(line, SA) and not already:
+                line = line[len(SA):len(line)]
+                sm.varsa(line)
+                already = True
+            elif kl.hasKeyWord(line, S) and not already:
                 line = line[len(S):len(line)]
                 sm.vars(line)
+                already = True

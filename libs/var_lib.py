@@ -69,3 +69,19 @@ class StrVar:
         for i in self.value:
             temp += ALLOWED_CHARS[(ALLOWED_CHARS.find(i)-1)%len(ALLOWED_CHARS)]
         self.value = temp
+
+#StrVarAll
+class StrVarAll:
+    def __init__(self, name, value=''):
+        self.value = value
+        self.name = name
+    
+    #GET METHOD
+    def getValue(self):
+        return self.value
+    def getName(self):
+        return self.name
+    
+    #SET METHOD
+    def setValue(self,value):
+        self.value = value
