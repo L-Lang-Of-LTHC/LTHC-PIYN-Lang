@@ -147,7 +147,8 @@ def varn(line):
         already = True
 
 def vars(line):
-    if '=' in line:
+    already = False
+    if '=' in line and not already:
         ls = line.split('=')
         isexist = False
         for vs in varslist:
@@ -156,8 +157,9 @@ def vars(line):
                 vs.setValue(ls[1])
         if not isexist:
             varslist.append(vl.StrVar(ls[0],ls[1]))
-    elif ':' in line:
-        ls = line.split(':')
+        already = True
+    elif '>' in line and not already:
+        ls = line.split('>')
         isexist = False
         for vs in varslist:
             if ls[0] == vs.getName():
@@ -165,7 +167,28 @@ def vars(line):
                 print(vs.getValue())
         if not isexist:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
-    elif '+' in line:
+        already = True
+    elif '++' in line and not already:
+        ls = line.split('++')
+        isexist = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist = True
+                vs.incValue()
+        if not isexist:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '--' in line and not already:
+        ls = line.split('--')
+        isexist = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist = True
+                vs.decValue()
+        if not isexist:
+            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '+' in line and not already:
         ls = line.split('+')
         isexist1 = False
         isexist2 = False
@@ -181,27 +204,11 @@ def vars(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '>' in line:
-        ls = line.split('>')
-        isexist = False
-        for vs in varslist:
-            if ls[0] == vs.getName():
-                isexist = True
-                vs.incValue()
-        if not isexist:
-            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
-    elif '<' in line:
-        ls = line.split('<')
-        isexist = False
-        for vs in varslist:
-            if ls[0] == vs.getName():
-                isexist = True
-                vs.decValue()
-        if not isexist:
-            print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
 
 def varsa(line):
-    if '=' in line:
+    already = False
+    if '=' in line and not already:
         ls = line.split('=')
         isexist = False
         for vs in varsalist:
@@ -210,8 +217,9 @@ def varsa(line):
                 vs.setValue(ls[1])
         if not isexist:
             varsalist.append(vl.StrVarAll(ls[0],ls[1]))
-    elif ':' in line:
-        ls = line.split(':')
+        already = True
+    elif '>' in line and not already:
+        ls = line.split('>')
         isexist = False
         for vs in varsalist:
             if ls[0] == vs.getName():
@@ -219,7 +227,8 @@ def varsa(line):
                 print(vs.getValue())
         if not isexist:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
-    elif '+' in line:
+        already = True
+    elif '+' in line and not already:
         ls = line.split('+')
         isexist1 = False
         isexist2 = False
@@ -235,3 +244,4 @@ def varsa(line):
         else:
             if not isexist2:
                 print('\nVARSA Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True

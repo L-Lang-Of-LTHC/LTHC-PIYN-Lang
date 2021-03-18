@@ -1,35 +1,35 @@
 VARN a = 0.9;
 VARN a + a ;
-VARN a :;
 VARN a >;
-VARN a :;
-VARN a <;
-VARN a :;
+VARN a ++;
+VARN a >;
+VARN a --;
+VARN a >;
 ^
 VARN temp = 0.5;
 VARN a - temp ;
-VARN a :;
+VARN a >;
 VARN a * temp ;
-VARN a :;
+VARN a >;
 VARN temp / a ;
-VARN temp :;
+VARN temp >;
 VARN u = 15;
 VARN v = 2;
 VARN u % v ;
-VARN u :;
+VARN u >;
 ^
 ^
 VARS b =m;
 VARS b + b ;
-VARS b :;
 VARS b >;
-VARS b :;
-VARS b <;
-VARS b :;
+VARS b ++;
+VARS b >;
+VARS b --;
+VARS b >;
 ^
 ^
 VARSA c =test;
-VRASA c :;
+VRASA c >;
 VARSA c + c ;
-VARSA c :;
+VARSA c >;
 ^
