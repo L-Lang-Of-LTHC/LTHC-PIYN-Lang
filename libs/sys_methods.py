@@ -19,7 +19,8 @@ varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
 ############
 
 def varn(line):
-    if '=' in line:
+    already = False
+    if '=' in line and not already:
         ls = line.split('=')
         isexist = False
         for vn in varnlist:
@@ -28,8 +29,9 @@ def varn(line):
                 vn.setValue(float(ls[1]))
         if not isexist:
             varnlist.append(vl.NumVar(ls[0],float(ls[1])))
-    elif ':' in line:
-        ls = line.split(':')
+        already = True
+    elif '>' in line and not already:
+        ls = line.split('>')
         isexist = False
         for vn in varnlist:
             if ls[0] == vn.getName():
@@ -37,7 +39,28 @@ def varn(line):
                 print(vn.getValue())
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
-    elif '+' in line:
+        already = True
+    elif '++' in line and not already:
+        ls = line.split('++')
+        isexist = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist = True
+                vn.incValue()
+        if not isexist:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '--' in line and not already:
+        ls = line.split('--')
+        isexist = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist = True
+                vn.decValue()
+        if not isexist:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
+    elif '+' in line and not already:
         ls = line.split('+')
         isexist1 = False
         isexist2 = False
@@ -53,7 +76,8 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '-' in line:
+        already = True
+    elif '-' in line and not already:
         ls = line.split('-')
         isexist1 = False
         isexist2 = False
@@ -69,7 +93,8 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '*' in line:
+        already = True
+    elif '*' in line and not already:
         ls = line.split('*')
         isexist1 = False
         isexist2 = False
@@ -85,7 +110,8 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '/' in line:
+        already = True
+    elif '/' in line and not already:
         ls = line.split('/')
         isexist1 = False
         isexist2 = False
@@ -101,7 +127,8 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '%' in line:
+        already = True
+    elif '%' in line and not already:
         ls = line.split('%')
         isexist1 = False
         isexist2 = False
@@ -117,24 +144,7 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-    elif '>' in line:
-        ls = line.split('>')
-        isexist = False
-        for vn in varnlist:
-            if ls[0] == vn.getName():
-                isexist = True
-                vn.incValue()
-        if not isexist:
-            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
-    elif '<' in line:
-        ls = line.split('<')
-        isexist = False
-        for vn in varnlist:
-            if ls[0] == vn.getName():
-                isexist = True
-                vn.decValue()
-        if not isexist:
-            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
 
 def vars(line):
     if '=' in line:
