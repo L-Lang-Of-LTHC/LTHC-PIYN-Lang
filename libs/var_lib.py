@@ -6,7 +6,7 @@
 # CONSTANTS
 ##############
 
-ALLOWED_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\\\"\'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü² ඞ'
+ALLOWED_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\\\"\'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü ²'
 
 #################
 # Vars Classes

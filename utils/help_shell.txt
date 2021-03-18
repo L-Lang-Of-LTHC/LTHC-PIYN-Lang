@@ -27,7 +27,7 @@
     
     Limited char string type:
         
-        Allowed char: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\"'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü² ඞ
+        Allowed char: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\"'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü ²
 
         VARS name = value
             Create a variable with a value = value or change the value of an existant variable to value

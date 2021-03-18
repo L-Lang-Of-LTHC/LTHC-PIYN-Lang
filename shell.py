@@ -35,8 +35,8 @@ def run():
             break
         if line == hlp:
             print(hlp_msg)
-            break
-        rl.readline(line, True)
+        if line != hlp:
+            rl.readline(line, True)
 
     print('\n >>> Shell stopped <<< \n')
     
