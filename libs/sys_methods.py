@@ -40,6 +40,20 @@ def varn(line):
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
+    elif '<' in line and not already:
+        ls = line.split('<')
+        isexist = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist = True
+                temp = input(' VARN > ')
+                try:
+                    vn.setValue(float(temp))
+                except:
+                    print('\nInput error: you have to give a float\n')
+        if not isexist:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        already = True
     elif '++' in line and not already:
         ls = line.split('++')
         isexist = False
@@ -168,6 +182,14 @@ def vars(line):
         if not isexist:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
+    elif '<' in line and not already:
+        ls = line.split('<')
+        isexist = False
+        for vs in varslist:
+            if ls[0] == vs.getName():
+                isexist = True
+                temp = input(' VARS > ')
+                vs.setValue(temp)
     elif '++' in line and not already:
         ls = line.split('++')
         isexist = False
@@ -228,6 +250,14 @@ def varsa(line):
         if not isexist:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
+    elif '<' in line and not already:
+        ls = line.split('<')
+        isexist = False
+        for vs in varsalist:
+            if ls[0] == vs.getName():
+                isexist = True
+                temp = input(' VARSA > ')
+                vs.setValue(temp)
     elif '+' in line and not already:
         ls = line.split('+')
         isexist1 = False

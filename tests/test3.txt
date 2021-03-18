@@ -1,0 +1,5 @@
+VARN a = 0;
+VARN a <;
+VARN a + a ;
+VARN a >;
+^
