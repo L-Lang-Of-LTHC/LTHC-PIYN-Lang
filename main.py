@@ -13,7 +13,7 @@ import shell as sh
 ###########
 cmd = ['file','shell','help','quit']
 status = True
-help_message = '\n  => command list:\n    file : run a file\n    shell : run a shell\n    help : show this help message\n    quit : close the main system "MAIN SYS"\n'
+help_message = '\n  => command list:\n                  file  : run a file\n                  shell : run a shell\n                  help  : show this help message\n                  quit  : close the main system "MAIN SYS"\n'
 
 while status:
     inp = ''
