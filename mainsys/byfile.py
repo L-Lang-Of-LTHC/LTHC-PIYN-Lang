@@ -11,7 +11,7 @@ import libs.readline as rl
 # Claim file
 ###############
 
-def run():
+def run(logstate, logfile):
     wantedfile = ''
     wantedfile = input('File > ')
     try:
@@ -27,7 +27,7 @@ def run():
 
         for i in lines:
             try:
-                rl.readline(i, False)
+                rl.readline(i, False, logstate, logfile)
             except:
                 print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
 

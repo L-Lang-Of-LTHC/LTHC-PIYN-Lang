@@ -7,6 +7,8 @@
 ############
 import libs.readline as rl
 from datetime import date as dt
+import libs.sys_methods as sm
+import libs.var_lib as vl
 
 ##########
 # Shell
@@ -23,7 +25,7 @@ try:
 except:
     print('\n\'utils/help_shell\' not found\n')
 
-def run():
+def run(state, logstate, logfile):
     ec = 'stop_shell'
     hlp = 'help_shell'
     status = True
@@ -31,12 +33,16 @@ def run():
         sht = str(dt.today()) + ' :> Shell > '
         line = input(sht)
         if line == ec:
+            if state == 'false':
+                sm.varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
+                sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
+                sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
             status = False
             break
         if line == hlp:
             print(hlp_msg)
         if line != hlp:
-            rl.readline(line, True)
+            rl.readline(line, True, logstate, logfile)
 
     print('\n >>> Shell stopped <<< \n')
     
