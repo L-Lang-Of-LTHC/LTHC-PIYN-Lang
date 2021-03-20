@@ -445,3 +445,45 @@ def hssum(line):
         already = True
     else:
         print('\nHSSUM Syntax Error: expected \'=\' between variables\' name')
+
+def smudi(line):
+    if '=' in line:
+        isexist1 = False
+        isexist2 = False
+        ls = line.split('=')
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varslist:
+                    if ls[1] == vs.getName():
+                        isexist2 = True
+                        vn.setValue(vs.smudi())
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    else:
+        print('\nSMUDI Syntax Error: expected \'=\' between variables\' name')
+
+def hsmudi(line):
+    if '=' in line:
+        isexist1 = False
+        isexist2 = False
+        ls = line.split('=')
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vs in varslist:
+                    if ls[1] == vs.getName():
+                        isexist2 = True
+                        vn.setValue(vs.hsmudi())
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    else:
+        print('\nHSMUDI Syntax Error: expected \'=\' between variables\' name')

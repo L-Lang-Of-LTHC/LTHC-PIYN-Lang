@@ -1,0 +1,10 @@
+VARS a =ABCabc  àé\n;
+VARS a >;
+^
+VARN a = 0;
+SMUDI a = a ;
+VARN a >;
+^
+HSMUDI a = a ;
+VARN a >;
+^

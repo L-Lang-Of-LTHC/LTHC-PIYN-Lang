@@ -16,6 +16,8 @@ S = 'VARS'
 SA = 'VARSA'
 SS = 'SSUM'
 HSS = 'HSSUM'
+SM = 'SMUDI'
+HSM = 'HSMUDI'
 
 ############
 # METHODS
@@ -36,6 +38,16 @@ def readline(line,inshell):
             line = line[len(S):len(line)]
             sm.vars(line)
             already = True
+        elif kl.hasKeyWord(line, HSM) and not already:
+            print("HSM")
+            line = line[len(HSM):len(line)]
+            sm.hsmudi(line)
+            already = True
+        elif kl.hasKeyWord(line, SM) and not already:
+            print("SM")
+            line = line[len(SM):len(line)]
+            sm.smudi(line)
+            already = True
         elif kl.hasKeyWord(line, HSS) and not already:
             line = line[len(HSS):len(line)]
             sm.hssum(line)
@@ -44,6 +56,7 @@ def readline(line,inshell):
             line = line[len(SS):len(line)]
             sm.ssum(line)
             already = True
+
     else:
         if kl.endLineRespected(line):
             line = line[0:-1]
@@ -59,6 +72,14 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, S) and not already:
                 line = line[len(S):len(line)]
                 sm.vars(line)
+                already = True
+            elif kl.hasKeyWord(line, HSM) and not already:
+                line = line[len(HSM):len(line)]
+                sm.hsmudi(line)
+                already = True
+            elif kl.hasKeyWord(line, SM) and not already:
+                line = line[len(SM):len(line)]
+                sm.smudi(line)
                 already = True
             elif kl.hasKeyWord(line, HSS) and not already:
                 line = line[len(HSS):len(line)]

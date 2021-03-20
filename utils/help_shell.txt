@@ -36,7 +36,7 @@
     
     Limited char string type:
         
-        Allowed char: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\"'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü ²
+        Allowed char: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\"'`~#{([})]-_|*+-><&éèçà@^¨$ =°êëîïôöâäûü
 
         VARS name = value
             Create a variable with a value = value or change the value of an existant variable to value
@@ -83,6 +83,18 @@
         HSSUM name1 = name2 
             set the value of the VARN type variable named name1 to the "special 'sum' " of all char
             contained in the VARS type variable named name2 
+        
+        /!\ The result of HSSUM is often different of the result of SSUM
+    
+    Advanced complex instructions:
+        
+        SMUDI name1 = name2 
+            set the value of the VARN type variable named name1 to the "SMUDI" the VARS type variable named name2 
+            for more details: see the source code of interpreter
+        
+        HSMUDI name1 = name2 
+            set the value of the VARN type variable named name1 to the "HSMUDI" the VARS type variable named name2 
+            for more details: see the source code of interpreter
         
         /!\ The result of HSSUM is often different of the result of SSUM
         

@@ -18,14 +18,19 @@ def run():
         wantedfile = open(wantedfile, 'r', encoding='utf-8')
 
         tlines = wantedfile.readlines()
+
+        wantedfile.close()
+
         lines = []
         for i in tlines:
             lines.append(i.replace('\n',''))
 
         for i in lines:
-            rl.readline(i, False)
+            try:
+                rl.readline(i, False)
+            except:
+                print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
 
-        wantedfile.close()
     except:
         print('\nFile not found\n')
 

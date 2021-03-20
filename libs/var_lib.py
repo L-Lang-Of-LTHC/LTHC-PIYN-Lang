@@ -6,7 +6,7 @@
 # CONSTANTS
 ##############
 
-ALLOWED_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\\\"\'`~#{([})]-_|*+-><&éèçà@^¨$£¤€=°êëîïôöâäûü ²'
+ALLOWED_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;?!:/\\\"\'`~#{([})]-_|*+-><&éèçà@^¨$ =°êëîïôöâäûü'
 
 #################
 # Vars Classes
@@ -80,6 +80,12 @@ class StrVar:
         temp = 0
         for i in self.value:
             temp += (ALLOWED_CHARS.find(i) % int(len(ALLOWED_CHARS) / 2))
+        return temp
+    def smudi(self):
+        temp = int(self.ssum() / len(self.value) * 2.25)
+        return temp
+    def hsmudi(self):
+        temp = int(self.hssum() / len(self.value) * 2.25)
         return temp
 
 #StrVarAll
