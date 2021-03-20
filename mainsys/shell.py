@@ -38,17 +38,20 @@ def run(state, logstate, logfile):
                 for i in sm.varnlist:
                     if not i.getInshell():
                         temp.append(i)
-                sm.varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')].extend(temp)
+                temp = [vl.NumVar('DefaultStrNumVar_CreatedByLanguageSystem_00000000')] + temp
+                sm.varnlist = temp
                 temp = []
                 for i in sm.varslist:
                     if not i.getInshell():
                         temp.append(i)
-                sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')].extend(temp)
+                temp = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')] + temp
+                sm.varslist = temp
                 temp = []
                 for i in sm.varsalist:
                     if not i.getInshell():
                         temp.append(i)
-                sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')].extend(temp)
+                temp = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')] + temp
+                sm.varsalist = temp
             status = False
             break
         if line == hlp:
