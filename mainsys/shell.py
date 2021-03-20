@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# ./shell.py  =>  contains shell system
+# ./mainsys/shell.py  =>  contains shell system
 
 ############
 # IMPORTS

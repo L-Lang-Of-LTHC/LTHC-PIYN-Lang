@@ -14,6 +14,22 @@ varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
 varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
 varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
 
+def scan():
+    out = '\n'
+    if len(varnlist) > 1:
+        out += '  VARN > \n'
+        for i in range(1, len(varnlist)):
+            out += '    ' + varnlist[i].getName() + ' :> ' + str(varnlist[i].getValue()) + ' \n'
+    if len(varslist) > 1:
+        out += '\n  VARS > \n'
+        for i in range(1, len(varslist)):
+            out += '    ' + varslist[i].getName() + ' :> ' + varslist[i].getValue() + ' \n'
+    if len(varsalist) > 1:
+        out += '\n  VARSA > \n'
+        for i in range(1, len(varsalist)):
+            out += '    ' + varsalist[i].getName() + ' :> ' + varsalist[i].getValue() + ' \n'
+    return out
+
 ############
 # METHODS
 ############

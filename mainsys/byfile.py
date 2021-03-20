@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# ./byfile.py  =>  contains by file programming system
+# ./mainsys/byfile.py  =>  contains by file programming system
 
 ############
 # IMPORTS

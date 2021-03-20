@@ -5,16 +5,18 @@
 ############
 # IMPORTS
 ############
-import byfile as bf
-import shell as sh
+import mainsys.byfile as bf
+import mainsys.shell as sh
+import utils.explorer as ep
 
 ###########
 # System
 ###########
-cmd = ['file','shell','help','quit']
+cmd = ['file','shell','help','quit','explorer']
 status = True
 help_message = '\n  => command list:\n                  file  : run a file\n                  shell : run a shell\n                  help  : show this help message\n                  quit  : close the main system "MAIN SYS"\n'
 help_message += '\n       Shell command list:\n                            help_shell : show the help message of the shell if you are in shell\n                            stop_shell : quit the shell if you are in shell\n'
+help_message += '\n  >>> Other \"MAIN SYS\" command:\n                               explorer : open the \"Explorer SYS\"\n'
 
 while status:
     inp = ''
@@ -29,3 +31,5 @@ while status:
         print(help_message)
     if inp == cmd[3]:
         status = False
+    if inp == cmd[4]:
+        ep.run()
