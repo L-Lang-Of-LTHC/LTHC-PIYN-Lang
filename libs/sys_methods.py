@@ -19,22 +19,22 @@ def scan():
     if len(varnlist) > 1:
         out += '  VARN > \n'
         for i in range(1, len(varnlist)):
-            out += '    ' + varnlist[i].getName() + ' :> ' + str(varnlist[i].getValue()) + ' \n'
+            out += '    ' + varnlist[i].getName() + ' :> ' + str(varnlist[i].getValue()) + '  << In Shell: ' + str(varnlist[i].getInshell()) +' >> ' + ' \n'
     if len(varslist) > 1:
         out += '\n  VARS > \n'
         for i in range(1, len(varslist)):
-            out += '    ' + varslist[i].getName() + ' :> ' + varslist[i].getValue() + ' \n'
+            out += '    ' + varslist[i].getName() + ' :> ' + str(varslist[i].getValue()) + '  << In Shell: ' + str(varslist[i].getInshell()) +' >> ' + ' \n'
     if len(varsalist) > 1:
         out += '\n  VARSA > \n'
         for i in range(1, len(varsalist)):
-            out += '    ' + varsalist[i].getName() + ' :> ' + varsalist[i].getValue() + ' \n'
+            out += '    ' + varsalist[i].getName() + ' :> ' + str(varsalist[i].getValue()) + '  << In Shell: ' + str(varsalist[i].getInshell()) +' >> ' + ' \n'
     return out
 
 ############
 # METHODS
 ############
 
-def varn(line):
+def varn(line,inshell):
     already = False
     if '=' in line and not already:
         ls = line.split('=')
@@ -44,7 +44,7 @@ def varn(line):
                 isexist = True
                 vn.setValue(float(ls[1]))
         if not isexist:
-            varnlist.append(vl.NumVar(ls[0],float(ls[1])))
+            varnlist.append(vl.NumVar(ls[0],float(ls[1]),inshell))
         already = True
     elif '>' in line and not already:
         ls = line.split('>')
@@ -236,7 +236,7 @@ def varn(line):
                 print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
 
-def vars(line):
+def vars(line,inshell):
     already = False
     if '=' in line and not already:
         ls = line.split('=')
@@ -246,7 +246,7 @@ def vars(line):
                 isexist = True
                 vs.setValue(ls[1])
         if not isexist:
-            varslist.append(vl.StrVar(ls[0],ls[1]))
+            varslist.append(vl.StrVar(ls[0],ls[1],inshell))
         already = True
     elif '>' in line and not already:
         ls = line.split('>')
@@ -338,7 +338,7 @@ def vars(line):
                 print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
 
-def varsa(line):
+def varsa(line,inshell):
     already = False
     if '=' in line and not already:
         ls = line.split('=')
@@ -348,7 +348,7 @@ def varsa(line):
                 isexist = True
                 vs.setValue(ls[1])
         if not isexist:
-            varsalist.append(vl.StrVarAll(ls[0],ls[1]))
+            varsalist.append(vl.StrVarAll(ls[0],ls[1],inshell))
         already = True
     elif '>' in line and not already:
         ls = line.split('>')

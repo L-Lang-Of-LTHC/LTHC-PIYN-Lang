@@ -29,19 +29,19 @@ def readline(line,inshell,logstate,logfile):
         already = False
         if kl.hasKeyWord(line, V) and not already:
             line = line[len(V):len(line)]
-            sm.varn(line)
+            sm.varn(line,inshell)
             if logstate == 'true':
                 lgu.log(logfile, 'Shell >RL> VARN')
             already = True
         elif kl.hasKeyWord(line, SA) and not already:
             line = line[len(SA):len(line)]
-            sm.varsa(line)
+            sm.varsa(line,inshell)
             if logstate == 'true':
                 lgu.log(logfile, 'Shell >RL> VARSA')
             already = True
         elif kl.hasKeyWord(line, S) and not already:
             line = line[len(S):len(line)]
-            sm.vars(line)
+            sm.vars(line,inshell)
             if logstate == 'true':
                 lgu.log(logfile, 'Shell >RL> VARS')
             already = True
@@ -76,19 +76,19 @@ def readline(line,inshell,logstate,logfile):
             already = False
             if kl.hasKeyWord(line, V) and not already:
                 line = line[len(V):len(line)]
-                sm.varn(line)
+                sm.varn(line,inshell)
                 if logstate == 'true':
                     lgu.log(logfile, 'File >RL> VARN')
                 already = True
             elif kl.hasKeyWord(line, SA) and not already:
                 line = line[len(SA):len(line)]
-                sm.varsa(line)
+                sm.varsa(line,inshell)
                 if logstate == 'true':
                     lgu.log(logfile, 'File >RL> VARSA')
                 already = True
             elif kl.hasKeyWord(line, S) and not already:
                 line = line[len(S):len(line)]
-                sm.vars(line)
+                sm.vars(line,inshell)
                 if logstate == 'true':
                     lgu.log(logfile, 'File >RL> VARS')
                 already = True

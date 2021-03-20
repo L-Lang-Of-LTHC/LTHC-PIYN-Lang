@@ -34,9 +34,21 @@ def run(state, logstate, logfile):
         line = input(sht)
         if line == ec:
             if state == 'false':
-                sm.varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
-                sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
-                sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
+                temp = []
+                for i in sm.varnlist:
+                    if not i.getInshell():
+                        temp.append(i)
+                sm.varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')].extend(temp)
+                temp = []
+                for i in sm.varslist:
+                    if not i.getInshell():
+                        temp.append(i)
+                sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')].extend(temp)
+                temp = []
+                for i in sm.varsalist:
+                    if not i.getInshell():
+                        temp.append(i)
+                sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')].extend(temp)
             status = False
             break
         if line == hlp:
