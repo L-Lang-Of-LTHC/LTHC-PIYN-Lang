@@ -2,9 +2,12 @@
 
 # ./utils/logger_utils.py  =>  contains logging system
 
+from os import path as pt
+
 def initl(file):
-    f = open(file,'x')
-    f.close()
+    if not pt.exists(file):
+        f = open(file,'x')
+        f.close()
 
 def log(file,msg):
     try:
@@ -15,7 +18,7 @@ def log(file,msg):
         for a in t:
             temp += a
         f = open(file,'w',encoding='utf-8')
-        f.write(temp + msg + '\n')
+        f.write(temp + msg)
         f.close()
     except:
         print('\n  LOG ERROR  \n')
