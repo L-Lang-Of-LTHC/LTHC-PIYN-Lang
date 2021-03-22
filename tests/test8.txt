@@ -1,0 +1,10 @@
+VARN a = 7;
+VARN b = 8;
+CMP a : b => a ;
+VARN a >;
+^
+VARS a = 7;
+VARS b = 8;
+CMPS a : b => a ;
+VARN a >;
+^

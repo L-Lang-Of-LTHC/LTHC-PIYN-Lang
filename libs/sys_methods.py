@@ -437,7 +437,6 @@ def ssum(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-        already = True
     else:
         print('\nSSUM Syntax Error: expected \'=\' between variables\' name')
 
@@ -458,7 +457,6 @@ def hssum(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-        already = True
     else:
         print('\nHSSUM Syntax Error: expected \'=\' between variables\' name')
 
@@ -479,7 +477,6 @@ def smudi(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-        already = True
     else:
         print('\nSMUDI Syntax Error: expected \'=\' between variables\' name')
 
@@ -500,6 +497,5 @@ def hsmudi(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
-        already = True
     else:
         print('\nHSMUDI Syntax Error: expected \'=\' between variables\' name')

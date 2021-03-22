@@ -25,7 +25,7 @@ help_message += '\n  >>> Other \"MAIN SYS\" command:\n                          
 log, logfile, bypass_shell_limit, global_shell_var = cb.read()
 print('Current config: \n  >log: ' + log + '\n  >logfile: ' + logfile + '\n  >bypass_shell_limit: ' + bypass_shell_limit + '\n  >global_shell_var: ' + global_shell_var + '\n')
 lgu.initl(logfile)
-print('\n\n Type help for show the help message \n\n')
+print('\n\n Type help for show the help message \n\n Thanks for use this language :) \n\n')
 
 while status:
     inp = ''
