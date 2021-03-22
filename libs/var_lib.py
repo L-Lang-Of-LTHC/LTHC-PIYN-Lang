@@ -14,18 +14,15 @@ ALLOWED_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.
 
 # NumVar
 class NumVar:
-    def __init__(self,name,value=0,inshell=False):
+    def __init__(self,name,value=0):
         self.value = value
         self.name = name
-        self.inshell = inshell
     
     #GET METHOD
     def getValue(self):
         return self.value
     def getName(self):
         return self.name
-    def getInshell(self):
-        return self.inshell
     
     #SET METHOD
     def setValue(self,value):
@@ -37,7 +34,7 @@ class NumVar:
 
 # StrVar
 class StrVar:
-    def __init__(self, name, value='',inshell=False):
+    def __init__(self, name, value=''):
         temp = ''
         for i in value:
             if i in ALLOWED_CHARS:
@@ -46,15 +43,12 @@ class StrVar:
                 temp += ''
         self.value = temp
         self.name = name
-        self.inshell = inshell
     
     #GET METHOD
     def getValue(self):
         return self.value
     def getName(self):
         return self.name
-    def getInshell(self):
-        return self.inshell
     
     #SET METHOD
     def setValue(self,value):
@@ -96,18 +90,15 @@ class StrVar:
 
 #StrVarAll
 class StrVarAll:
-    def __init__(self, name, value='',inshell=False):
+    def __init__(self, name, value=''):
         self.value = value
         self.name = name
-        self.inshell = inshell
     
     #GET METHOD
     def getValue(self):
         return self.value
     def getName(self):
         return self.name
-    def getInshell(self):
-        return self.inshell
     
     #SET METHOD
     def setValue(self,value):
