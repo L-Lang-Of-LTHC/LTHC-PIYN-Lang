@@ -11,6 +11,7 @@ import utils.explorer as ep
 import utils.config_base as cb
 import utils.config_sys as cs
 import utils.logger_utils as lgu
+import libs.sys_methods as sm
 
 ###########
 # System
@@ -37,6 +38,10 @@ while status:
         sh.run(global_shell_var,log,logfile)
     if inp == cmd[2]:
         print(help_message)
+        if bypass_shell_limit == 'true':
+            sh.disp_hlp_msg()
+            sh.clear_internal(global_shell_var)
+            sm.scan()
     if inp == cmd[3]:
         status = False
     if inp == cmd[4]:

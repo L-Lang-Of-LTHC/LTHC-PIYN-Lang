@@ -26,6 +26,30 @@ try:
 except:
     print('\n\'utils/help_shell\' not found\n')
 
+def disp_hlp_msg():
+    print(hlp_msg)
+
+def clear_internal(state):
+    if state == 'false':
+        temp = []
+        for i in sm.varnlist:
+            if not i.getInshell():
+                temp.append(i)
+        temp = [vl.NumVar('DefaultStrNumVar_CreatedByLanguageSystem_00000000')] + temp
+        sm.varnlist = temp.copy()
+        temp = []
+        for i in sm.varslist:
+            if not i.getInshell():
+                temp.append(i)
+        temp = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')] + temp
+        sm.varslist = temp.copy()
+        temp = []
+        for i in sm.varsalist:
+            if not i.getInshell():
+                temp.append(i)
+        temp = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')] + temp
+        sm.varsalist = temp.copy()
+
 def run(state, logstate, logfile):
     ec = 'stop_shell'
     hlp = 'help_shell'
@@ -35,29 +59,11 @@ def run(state, logstate, logfile):
         sht = str(dt.today()) + ' :> Shell > '
         line = input(sht)
         if line == ec:
-            if state == 'false':
-                temp = []
-                for i in sm.varnlist:
-                    if not i.getInshell():
-                        temp.append(i)
-                temp = [vl.NumVar('DefaultStrNumVar_CreatedByLanguageSystem_00000000')] + temp
-                sm.varnlist = temp.copy()
-                temp = []
-                for i in sm.varslist:
-                    if not i.getInshell():
-                        temp.append(i)
-                temp = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')] + temp
-                sm.varslist = temp.copy()
-                temp = []
-                for i in sm.varsalist:
-                    if not i.getInshell():
-                        temp.append(i)
-                temp = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')] + temp
-                sm.varsalist = temp.copy()
+            clear_internal(state)
             status = False
             break
         if line == hlp:
-            print(hlp_msg)
+            disp_hlp_msg()
         if line != hlp:
             if logstate == 'true':
                 out.append(rl.readline(line, True, logstate, logfile))
