@@ -1,0 +1,2 @@
+VARS a =Hello World !;
+VARS a >;
