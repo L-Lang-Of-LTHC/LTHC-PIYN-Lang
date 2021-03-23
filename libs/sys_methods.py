@@ -6,6 +6,7 @@
 # IMPORTS
 ############
 import libs.var_lib as vl
+import utils.linker as lk
 
 ############
 # Usefull
@@ -13,6 +14,7 @@ import libs.var_lib as vl
 varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
 varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
 varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
+varflist = [vl.FuncVar('DefaultFuncVar_CreatedByLanguageSystem_00000000')]
 
 def scan():
     out = '\n'
@@ -28,6 +30,10 @@ def scan():
         out += '\n  VARSA > \n'
         for i in range(1, len(varsalist)):
             out += '    ' + varsalist[i].getName() + ' :> ' + str(varsalist[i].getValue()) + ' \n'
+    if len(varflist) > 1:
+        out += '\n  VARF > \n'
+        for i in range(1, len(varflist)):
+            out += '    ' + varflist[i].getName() + ' :> ' + str(varflist[i].getFile()) + ' \n'
     return out
 
 ############
@@ -590,3 +596,25 @@ def compare_cmps(line):
             print('\nCMPS Syntax Error: missing args')
     else:
         print('\nCMPS Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')
+
+def varf(line):
+    if '=' in line:
+        ls = line.split('=')
+        isexist = False
+        for vf in varflist:
+            if ls[0] == vf.getName():
+                isexist = True
+        if not isexist:
+            varflist.append(vl.FuncVar(ls[0],ls[1]))
+
+def fcall(line):
+    if len(line) > 0:
+        isexist = False
+        for vf in varflist:
+            if line == vf.getName():
+                isexist = True
+                lk.link(vf.getFile(), 0)
+        if not isexist:
+            print('\nVARF Error: \n >> ' + line + ' << don\'t exist\n')
+    else:
+        print('\nFCALL Error: specify a file')

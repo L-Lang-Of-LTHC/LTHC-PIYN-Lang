@@ -106,6 +106,15 @@
         CMPS name1 : name2 => name3 
             special comparison of the VARS type variable named name1 to the VARS type variable named name2 
             and store a value of -1 or 0 or 1 (to represent the result) in the VARN type variable named name3 
+    
+    VARF and FCALL:
+        
+        VARF name =file
+            create a VARF type variable which point to file
+        
+        FCALL name 
+            run the code of the file pointed by the VARF type variable named name 
+            it is a Function CALLer for execute function
         
   < Shell help <  
   

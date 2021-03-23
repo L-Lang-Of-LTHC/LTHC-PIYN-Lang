@@ -103,3 +103,15 @@ class StrVarAll:
     #SET METHOD
     def setValue(self,value):
         self.value = value
+
+#FuncVar
+class FuncVar:
+    def __init__(self, name, file=None):
+        self.file = file
+        self.name = name
+    
+    #GET METHOD
+    def getFile(self):
+        return self.file
+    def getName(self):
+        return self.name

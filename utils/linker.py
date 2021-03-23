@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
 
-# ./mainsys/byfile.py  =>  contains by file programming system
+# ./utils/linker.py  =>  contains file linking system
 
 ############
 # IMPORTS
 ############
 import libs.readline as rl
 
-###############
-# Claim file
-###############
+def link(file, mode, param=None):
+    if mode == 0: #FCALL et NE, LT, GT, EQ
+        run(file)
+    if mode == 1: #LOOP
+        for i in range(param):
+            run(file)
 
-def run():
-    wantedfile = ''
-    wantedfile = input('File > ')
+def run(file):
     try:
-        wantedfile = open(wantedfile, 'r', encoding='utf-8')
-        tlines = wantedfile.readlines()
-        wantedfile.close()
+        wanted = open(file, 'r', encoding='utf-8')
+        tlines = wanted.readlines()
+        wanted.close()
 
         lines = []
         for i in tlines:
@@ -30,7 +31,3 @@ def run():
                 print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
     except:
         print('\nFile not found\n')
-
-    t = None
-    while t == None:
-        t = input('')

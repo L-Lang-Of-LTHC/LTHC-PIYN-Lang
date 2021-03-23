@@ -1,0 +1,5 @@
+VARF 1 =tests/test2.txt;
+VARF 2 =tests/test7.txt;
+FCALL 1 ;
+FCALL 2 ;
+^
