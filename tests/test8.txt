@@ -1,0 +1,10 @@
+VARN a = 1;
+VARN b = 17;
+CMP a : b => a ;
+VARN a >;
+^
+VARS c =Test;
+VARS d =test;
+CMPS c : d => a ;
+VARN a >;
+^

@@ -14,10 +14,15 @@ import libs.sys_methods as sm
 V = 'VARN'
 S = 'VARS'
 SA = 'VARSA'
+
 SS = 'SSUM'
 HSS = 'HSSUM'
+
 SM = 'SMUDI'
 HSM = 'HSMUDI'
+
+C = 'CMP'
+CS = 'CMPS'
 
 ############
 # METHODS
@@ -54,6 +59,14 @@ def readline(line,inshell):
             line = line[len(SS):len(line)]
             sm.ssum(line)
             already = True
+        elif kl.hasKeyWord(line, CS) and not already:
+            line = line[len(CS):len(line)]
+            sm.compare_cmps(line)
+            already = True
+        elif kl.hasKeyWord(line, C) and not already:
+            line = line[len(C):len(line)]
+            sm.compare_cmp(line)
+            already = True
     else:
         if kl.endLineRespected(line):
             line = line[0:-1]
@@ -85,4 +98,12 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, SS) and not already:
                 line = line[len(SS):len(line)]
                 sm.ssum(line)
+                already = True
+            elif kl.hasKeyWord(line, CS) and not already:
+                line = line[len(CS):len(line)]
+                sm.compare_cmps(line)
+                already = True
+            elif kl.hasKeyWord(line, C) and not already:
+                line = line[len(C):len(line)]
+                sm.compare_cmp(line)
                 already = True

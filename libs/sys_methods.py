@@ -499,3 +499,94 @@ def hsmudi(line):
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
     else:
         print('\nHSMUDI Syntax Error: expected \'=\' between variables\' name')
+
+def compare_cmp(line):
+    if ':' in line:
+        ltemp = line.split(':')
+        if len(ltemp) > 1:
+            if '=>' in ltemp[1]:
+                ltemp2 = ltemp[1].split('=>')
+                ls = [ltemp[0],ltemp2[0],ltemp2[1]]
+                isexist1 = False
+                isexist2 = False
+                isexist3 = False
+                for vn1 in varnlist:
+                    if ls[0] == vn1.getName():
+                        isexist1 = True
+                        for vn2 in varnlist:
+                            if ls[1] == vn2.getName():
+                                isexist2 = True
+                                for vn3 in varnlist:
+                                    if ls[2] == vn3.getName():
+                                        isexist3 = True
+                                        v1 = vn1.getValue()
+                                        v2 = vn2.getValue()
+                                        if v1 > v2:
+                                            vn3.setValue(1)
+                                        if v1 == v2:
+                                            vn3.setValue(0)
+                                        if v1 < v2:
+                                            vn3.setValue(-1)
+                if not isexist1:
+                    print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                else:
+                    if not isexist2:
+                        print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+                    else:
+                        if not isexist3:
+                            print('\nVARN Error: \n >> ' + ls[2] + ' << don\'t exist\n')
+            else:
+                print('\nCMP Syntax Error: expected \'=>\' between second variable\'s name and third variable\'s name')
+        else:
+            print('\nCMP Syntax Error: missing args')
+    else:
+        print('\nCMP Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')
+
+def compare_cmps(line):
+    if ':' in line:
+        ltemp = line.split(':')
+        if len(ltemp) > 1:
+            if '=>' in ltemp[1]:
+                ltemp2 = ltemp[1].split('=>')
+                ls = [ltemp[0],ltemp2[0],ltemp2[1]]
+                isexist1 = False
+                isexist2 = False
+                isexist3 = False
+                for vs1 in varslist:
+                    if ls[0] == vs1.getName():
+                        isexist1 = True
+                        for vs2 in varslist:
+                            if ls[1] == vs2.getName():
+                                isexist2 = True
+                                for vn in varnlist:
+                                    if ls[2] == vn.getName():
+                                        isexist3 = True
+                                        v1 = vs1.ssum()
+                                        v2 = vs2.ssum()
+                                        vl1 = len(vs1.getValue())
+                                        vl2 = len(vs2.getValue())
+                                        if vl1 > vl2:
+                                            vn.setValue(1)
+                                        if vl1 < vl2:
+                                            vn.setValue(-1)
+                                        if vl1 == vl2:
+                                            if v1 > v2:
+                                                vn.setValue(1)
+                                            if v1 == v2:
+                                                vn.setValue(0)
+                                            if v1 < v2:
+                                                vn.setValue(-1)
+                if not isexist1:
+                    print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                else:
+                    if not isexist2:
+                        print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+                    else:
+                        if not isexist3:
+                            print('\nVARN Error: \n >> ' + ls[2] + ' << don\'t exist\n')
+            else:
+                print('\nCMPS Syntax Error: expected \'=>\' between second variable\'s name and third variable\'s name')
+        else:
+            print('\nCMPS Syntax Error: missing args')
+    else:
+        print('\nCMPS Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')

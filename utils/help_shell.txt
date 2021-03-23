@@ -97,6 +97,15 @@
             for more details: see the source code of interpreter
         
         /!\ The result of HSSUM is often different of the result of SSUM
+    
+    Comparison:
+        CMP name1 : name2 => name3 
+            compare the VARN type variable named name1 to the VARN type variable named name2 
+            and store a value of -1 or 0 or 1 (to represent the result) in the VARN type variable named name3 
+        
+        CMPS name1 : name2 => name3 
+            special comparison of the VARS type variable named name1 to the VARS type variable named name2 
+            and store a value of -1 or 0 or 1 (to represent the result) in the VARN type variable named name3 
         
   < Shell help <  
   
