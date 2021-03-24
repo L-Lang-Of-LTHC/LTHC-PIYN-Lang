@@ -106,6 +106,14 @@
         CMPS name1 : name2 => name3 
             special comparison of the VARS type variable named name1 to the VARS type variable named name2 
             and store a value of -1 or 0 or 1 (to represent the result) in the VARN type variable named name3 
+        
+        CMPR name1 : name2 => name3 
+            compare the VARS type variable named name1 to the VARS type variable named name2 
+            and store a value of -2 or 0 (to represent the result) in the VARN type variable named name3 
+        
+        CMPRA name1 : name2 => name3 
+            compare the VARSA type variable named name1 to the VARSA type variable named name2 
+            and store a value of -2 or 0 (to represent the result) in the VARN type variable named name3 
     
     VARF and FCALL:
         
