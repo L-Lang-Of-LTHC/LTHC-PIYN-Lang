@@ -791,3 +791,23 @@ def eq(line):
                 print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
     else:
         print('\nEQ Error: missing \':\'')
+
+def loop(line):
+    if ':' in line:
+        ls = line.split(':')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vf in varflist:
+                    if ls[1] == vf.getName():
+                        isexist2 = True
+                        lk.link(vf.getFile(), 1, int(vn.getValue()))
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    else:
+        print('\nLOOP Error: missing \':\'')

@@ -142,5 +142,11 @@
             if the VARN type variable named name is the result of a comparison and if this result is equal (0)
             then func is execute, func is a VARF type variable named func 
         
+    Loop:
+        
+        LOOP name : func 
+            repeat the value of integer cast of the value of the VARN type variable named name times 
+            the execution of the VARF type variable named func 
+
   < Shell help <  
   

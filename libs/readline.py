@@ -34,6 +34,8 @@ GT = 'GT'
 NE = 'NE'
 EQ = 'EQ'
 
+L = 'LOOP'
+
 ############
 # METHODS
 ############
@@ -92,6 +94,10 @@ def readline(line,inshell):
         elif kl.hasKeyWord(line, F) and not already:
             line = line[len(F):len(line)]
             sm.fcall(line)
+            already = True
+        elif kl.hasKeyWord(line, L) and not already:
+            line = line[len(L):len(line)]
+            sm.loop(line)
             already = True
         elif kl.hasKeyWord(line, LT) and not already:
             line = line[len(LT):len(line)]
@@ -164,6 +170,10 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, F) and not already:
                 line = line[len(F):len(line)]
                 sm.fcall(line)
+                already = True
+            elif kl.hasKeyWord(line, L) and not already:
+                line = line[len(L):len(line)]
+                sm.loop(line)
                 already = True
             elif kl.hasKeyWord(line, LT) and not already:
                 line = line[len(LT):len(line)]

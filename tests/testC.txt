@@ -1,0 +1,4 @@
+VARF func =tests/hello_world.txt;
+VARN a = 5;
+LOOP a : func ;
+^
