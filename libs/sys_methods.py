@@ -597,6 +597,86 @@ def compare_cmps(line):
     else:
         print('\nCMPS Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')
 
+def compare_cmpr(line):
+    if ':' in line:
+        ltemp = line.split(':')
+        if len(ltemp) > 1:
+            if '=>' in ltemp[1]:
+                ltemp2 = ltemp[1].split('=>')
+                ls = [ltemp[0],ltemp2[0],ltemp2[1]]
+                isexist1 = False
+                isexist2 = False
+                isexist3 = False
+                for vs1 in varslist:
+                    if ls[0] == vs1.getName():
+                        isexist1 = True
+                        for vs2 in varslist:
+                            if ls[1] == vs2.getName():
+                                isexist2 = True
+                                for vn in varnlist:
+                                    if ls[2] == vn.getName():
+                                        isexist3 = True
+                                        v1 = vs1.getValue()
+                                        v2 = vs2.getValue()
+                                        if v1 == v2:
+                                            vn.setValue(0)
+                                        else:
+                                            vn.setValue(-2)
+                if not isexist1:
+                    print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                else:
+                    if not isexist2:
+                        print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+                    else:
+                        if not isexist3:
+                            print('\nVARN Error: \n >> ' + ls[2] + ' << don\'t exist\n')
+            else:
+                print('\nCMPR Syntax Error: expected \'=>\' between second variable\'s name and third variable\'s name')
+        else:
+            print('\nCMPR Syntax Error: missing args')
+    else:
+        print('\nCMPR Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')
+
+def compare_cmpra(line):
+    if ':' in line:
+        ltemp = line.split(':')
+        if len(ltemp) > 1:
+            if '=>' in ltemp[1]:
+                ltemp2 = ltemp[1].split('=>')
+                ls = [ltemp[0],ltemp2[0],ltemp2[1]]
+                isexist1 = False
+                isexist2 = False
+                isexist3 = False
+                for vs1 in varsalist:
+                    if ls[0] == vs1.getName():
+                        isexist1 = True
+                        for vs2 in varsalist:
+                            if ls[1] == vs2.getName():
+                                isexist2 = True
+                                for vn in varnlist:
+                                    if ls[2] == vn.getName():
+                                        isexist3 = True
+                                        v1 = vs1.getValue()
+                                        v2 = vs2.getValue()
+                                        if v1 == v2:
+                                            vn.setValue(0)
+                                        else:
+                                            vn.setValue(-2)
+                if not isexist1:
+                    print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                else:
+                    if not isexist2:
+                        print('\nVARSA Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+                    else:
+                        if not isexist3:
+                            print('\nVARN Error: \n >> ' + ls[2] + ' << don\'t exist\n')
+            else:
+                print('\nCMPRA Syntax Error: expected \'=>\' between second variable\'s name and third variable\'s name')
+        else:
+            print('\nCMPRA Syntax Error: missing args')
+    else:
+        print('\nCMPRA Syntax Error: expected \':\' between first variable\'s name and second variable\'s name')
+
 def varf(line):
     if '=' in line:
         ls = line.split('=')

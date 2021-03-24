@@ -24,6 +24,8 @@ HSM = 'HSMUDI'
 
 C = 'CMP'
 CS = 'CMPS'
+CR = 'CMPR'
+CRA = 'CMPRA'
 
 F = 'FCALL'
 
@@ -61,6 +63,14 @@ def readline(line,inshell):
         elif kl.hasKeyWord(line, SS) and not already:
             line = line[len(SS):len(line)]
             sm.ssum(line)
+            already = True
+        elif kl.hasKeyWord(line, CRA):
+            line = line[len(CRA):len(line)]
+            sm.compare_cmpra(line)
+            already = True
+        elif kl.hasKeyWord(line, CR):
+            line = line[len(CR):len(line)]
+            sm.compare_cmpr(line)
             already = True
         elif kl.hasKeyWord(line, CS) and not already:
             line = line[len(CS):len(line)]
@@ -109,6 +119,14 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, SS) and not already:
                 line = line[len(SS):len(line)]
                 sm.ssum(line)
+                already = True
+            elif kl.hasKeyWord(line, CRA):
+                line = line[len(CRA):len(line)]
+                sm.compare_cmpra(line)
+                already = True
+            elif kl.hasKeyWord(line, CR):
+                line = line[len(CR):len(line)]
+                sm.compare_cmpr(line)
                 already = True
             elif kl.hasKeyWord(line, CS) and not already:
                 line = line[len(CS):len(line)]

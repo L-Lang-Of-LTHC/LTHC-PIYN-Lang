@@ -1,0 +1,17 @@
+VARN a = 0;
+VARS b =Test;
+VARS c =Test;
+CMPR b : c => a ;
+VARN a >;
+VARS c =test;
+CMPR b : c => a ;
+VARN a >;
+^
+VARSA d =Test;
+VARSA e =Test;
+CMPRA d : e => a ;
+VARN a >;
+VARSA e =test;
+CMPRA d : e => a ;
+VARN a >;
+^
