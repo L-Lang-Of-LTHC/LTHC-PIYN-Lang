@@ -1,0 +1,23 @@
+VARF ne =tests/test2.txt;
+^
+VARN a = 0;
+VARS b =Test;
+VARS c =Test;
+CMPR b : c => a ;
+VARN a >;
+NE a : ne ;
+VARS c =test;
+CMPR b : c => a ;
+VARN a >;
+NE a : ne ;
+^
+VARSA d =Test;
+VARSA e =Test;
+CMPRA d : e => a ;
+VARN a >;
+NE a : ne ;
+VARSA e =test;
+CMPRA d : e => a ;
+VARN a >;
+NE a : ne ;
+^

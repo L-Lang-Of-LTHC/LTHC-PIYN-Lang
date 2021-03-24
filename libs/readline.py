@@ -29,6 +29,11 @@ CRA = 'CMPRA'
 
 F = 'FCALL'
 
+LT = 'LT'
+GT = 'GT'
+NE = 'NE'
+EQ = 'EQ'
+
 ############
 # METHODS
 ############
@@ -88,6 +93,22 @@ def readline(line,inshell):
             line = line[len(F):len(line)]
             sm.fcall(line)
             already = True
+        elif kl.hasKeyWord(line, LT) and not already:
+            line = line[len(LT):len(line)]
+            sm.lt(line)
+            already = True
+        elif kl.hasKeyWord(line, GT) and not already:
+            line = line[len(GT):len(line)]
+            sm.gt(line)
+            already = True
+        elif kl.hasKeyWord(line, NE) and not already:
+            line = line[len(NE):len(line)]
+            sm.ne(line)
+            already = True
+        elif kl.hasKeyWord(line, EQ) and not already:
+            line = line[len(EQ):len(line)]
+            sm.eq(line)
+            already = True
     else:
         if kl.endLineRespected(line):
             line = line[0:-1]
@@ -143,4 +164,20 @@ def readline(line,inshell):
             elif kl.hasKeyWord(line, F) and not already:
                 line = line[len(F):len(line)]
                 sm.fcall(line)
+                already = True
+            elif kl.hasKeyWord(line, LT) and not already:
+                line = line[len(LT):len(line)]
+                sm.lt(line)
+                already = True
+            elif kl.hasKeyWord(line, GT) and not already:
+                line = line[len(GT):len(line)]
+                sm.gt(line)
+                already = True
+            elif kl.hasKeyWord(line, NE) and not already:
+                line = line[len(NE):len(line)]
+                sm.ne(line)
+                already = True
+            elif kl.hasKeyWord(line, EQ) and not already:
+                line = line[len(EQ):len(line)]
+                sm.eq(line)
                 already = True

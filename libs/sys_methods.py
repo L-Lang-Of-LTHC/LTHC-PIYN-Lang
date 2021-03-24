@@ -698,3 +698,96 @@ def fcall(line):
             print('\nVARF Error: \n >> ' + line + ' << don\'t exist\n')
     else:
         print('\nFCALL Error: specify a file')
+
+def lt(line):
+    if ':' in line:
+        ls = line.split(':')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                if vn.getValue() == -1:
+                    for vf in varflist:
+                        if ls[1] == vf.getName():
+                            isexist2 = True
+                            lk.link(vf.getFile(), 0)
+                else:
+                    isexist2 = True
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    else:
+        print('\nLT Error: missing \':\'')
+
+def gt(line):
+    if ':' in line:
+        ls = line.split(':')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                if vn.getValue() == 1:
+                    for vf in varflist:
+                        if ls[1] == vf.getName():
+                            isexist2 = True
+                            lk.link(vf.getFile(), 0)
+                else:
+                    isexist2 = True
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    else:
+        print('\nGT Error: missing \':\'')
+
+def ne(line):
+    if ':' in line:
+        ls = line.split(':')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                vl = vn.getValue()
+                if vl == -1 or vl == -2 or vl == 1:
+                    for vf in varflist:
+                        if ls[1] == vf.getName():
+                            isexist2 = True
+                            lk.link(vf.getFile(), 0)
+                else:
+                    isexist2 = True
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    else:
+        print('\nNE Error: missing \':\'')
+
+def eq(line):
+    if ':' in line:
+        ls = line.split(':')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                if vn.getValue() == 0:
+                    for vf in varflist:
+                        if ls[1] == vf.getName():
+                            isexist2 = True
+                            lk.link(vf.getFile(), 0)
+                else:
+                    isexist2 = True
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nVARF Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+    else:
+        print('\nEQ Error: missing \':\'')

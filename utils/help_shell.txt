@@ -123,6 +123,24 @@
         FCALL name 
             run the code of the file pointed by the VARF type variable named name 
             it is a Function CALLer for execute function
+    
+    Conditional instructions:
+        
+        LT name : func 
+            if the VARN type variable named name is the result of a comparison and if this result is lesser than (-1)
+            then func is execute, func is a VARF type variable named func 
+        
+        GT name : func 
+            if the VARN type variable named name is the result of a comparison and if this result is greater than (1)
+            then func is execute, func is a VARF type variable named func 
+        
+        NE name : func 
+            if the VARN type variable named name is the result of a comparison and if this result is non equal (-2 or -1 or 1)
+            then func is execute, func is a VARF type variable named func 
+        
+        EQ name : func 
+            if the VARN type variable named name is the result of a comparison and if this result is equal (0)
+            then func is execute, func is a VARF type variable named func 
         
   < Shell help <  
   
