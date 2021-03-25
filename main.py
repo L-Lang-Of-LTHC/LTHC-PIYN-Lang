@@ -9,6 +9,7 @@ import mainsys.byfile as bf
 import mainsys.shell as sh
 import utils.explorer as ep
 import libs.sys_methods as sm
+import settings.checker as chk
 
 ###########
 # System
@@ -19,6 +20,7 @@ help_message = '\n  => command list:\n                  file  : run a file\n    
 help_message += '\n       Shell command list:\n                            help_shell : show the help message about instructions if you are in shell\n                            stop_shell : quit the shell if you are in shell\n'
 help_message += '\n  >>> Other \"MAIN SYS\" command:\n                               explorer : open the \"Explorer SYS\"\n'
 
+chk.print_info()
 print('\n\n Type help for show the help message \n\n Thanks for use this language :) \n\n')
 
 while status:
