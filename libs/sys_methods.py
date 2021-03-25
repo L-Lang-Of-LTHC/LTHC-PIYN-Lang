@@ -49,6 +49,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist = True
                 vn.setValue(float(ls[1]))
+                break
         if not isexist:
             varnlist.append(vl.NumVar(ls[0],float(ls[1])))
         already = True
@@ -59,6 +60,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist = True
                 print(vn.getValue())
+                break
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -73,6 +75,7 @@ def varn(line):
                     vn.setValue(float(temp))
                 except:
                     print('\nInput error: you have to give a float\n')
+                break
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -83,6 +86,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist = True
                 vn.incValue()
+                break
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -93,6 +97,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist = True
                 vn.decValue()
+                break
         if not isexist:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -107,6 +112,8 @@ def varn(line):
                     if ls[1] == vn2.getName():
                         isexist2 = True
                         vn1.setValue(vn1.getValue()+vn2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -124,6 +131,8 @@ def varn(line):
                     if ls[1] == vn2.getName():
                         isexist2 = True
                         vn1.setValue(vn1.getValue()-vn2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -141,6 +150,8 @@ def varn(line):
                     if ls[1] == vn2.getName():
                         isexist2 = True
                         vn1.setValue(vn1.getValue()*vn2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -158,6 +169,8 @@ def varn(line):
                     if ls[1] == vn2.getName():
                         isexist2 = True
                         vn1.setValue(vn1.getValue()/vn2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -175,6 +188,8 @@ def varn(line):
                     if ls[1] == vn2.getName():
                         isexist2 = True
                         vn1.setValue(vn1.getValue()%vn2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -195,6 +210,8 @@ def varn(line):
                             vn.setValue(float(vs.getValue()))
                         except:
                             print('\nCasting error\n')
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -215,6 +232,8 @@ def varn(line):
                             vn.setValue(float(vs.getValue()))
                         except:
                             print('\nCasting error\n')
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -235,6 +254,8 @@ def varn(line):
                             vn.setValue(float(vs.getValue()))
                         except:
                             print('\nCasting error\n')
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -251,6 +272,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist = True
                 vs.setValue(ls[1])
+                break
         if not isexist:
             varslist.append(vl.StrVar(ls[0],ls[1]))
         already = True
@@ -261,6 +283,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist = True
                 print(vs.getValue())
+                break
         if not isexist:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -272,6 +295,7 @@ def vars(line):
                 isexist = True
                 temp = input(' VARS > ')
                 vs.setValue(temp)
+                break
     elif '++' in line and not already:
         ls = line.split('++')
         isexist = False
@@ -279,6 +303,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist = True
                 vs.incValue()
+                break
         if not isexist:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -289,6 +314,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist = True
                 vs.decValue()
+                break
         if not isexist:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -303,6 +329,8 @@ def vars(line):
                     if ls[1] == vs2.getName():
                         isexist2 = True
                         vs1.setValue(vs1.getValue()+vs2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -320,6 +348,8 @@ def vars(line):
                     if ls[0] == vn.getName():
                         isexist2 = True
                         vs.setValue(str(vn.getValue()))
+                        break
+                break
         if not isexist1:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -337,6 +367,8 @@ def vars(line):
                     if ls[0] == vs2.getName():
                         isexist2 = True
                         vs.setValue(vs2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -353,6 +385,7 @@ def varsa(line):
             if ls[0] == vs.getName():
                 isexist = True
                 vs.setValue(ls[1])
+                break
         if not isexist:
             varsalist.append(vl.StrVarAll(ls[0],ls[1]))
         already = True
@@ -363,6 +396,7 @@ def varsa(line):
             if ls[0] == vs.getName():
                 isexist = True
                 print(vs.getValue())
+                break
         if not isexist:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         already = True
@@ -374,6 +408,7 @@ def varsa(line):
                 isexist = True
                 temp = input(' VARSA > ')
                 vs.setValue(temp)
+                break
     elif '+' in line and not already:
         ls = line.split('+')
         isexist1 = False
@@ -385,6 +420,8 @@ def varsa(line):
                     if ls[1] == vs2.getName():
                         isexist2 = True
                         vs1.setValue(vs1.getValue()+vs2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -402,6 +439,8 @@ def varsa(line):
                     if ls[0] == vn.getName():
                         isexist2 = True
                         vs.setValue(str(vn.getValue()))
+                        break
+                break
         if not isexist1:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -419,6 +458,8 @@ def varsa(line):
                     if ls[0] == vs2.getName():
                         isexist2 = True
                         vs.setValue(vs2.getValue())
+                        break
+                break
         if not isexist1:
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -438,6 +479,8 @@ def ssum(line):
                     if ls[1] == vs.getName():
                         isexist2 = True
                         vn.setValue(vs.ssum())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -458,6 +501,8 @@ def hssum(line):
                     if ls[1] == vs.getName():
                         isexist2 = True
                         vn.setValue(vs.hssum())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -478,6 +523,8 @@ def smudi(line):
                     if ls[1] == vs.getName():
                         isexist2 = True
                         vn.setValue(vs.smudi())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -498,6 +545,8 @@ def hsmudi(line):
                     if ls[1] == vs.getName():
                         isexist2 = True
                         vn.setValue(vs.hsmudi())
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -533,6 +582,9 @@ def compare_cmp(line):
                                             vn3.setValue(0)
                                         if v1 < v2:
                                             vn3.setValue(-1)
+                                        break
+                                break
+                        break
                 if not isexist1:
                     print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
                 else:
@@ -582,6 +634,9 @@ def compare_cmps(line):
                                                 vn.setValue(0)
                                             if v1 < v2:
                                                 vn.setValue(-1)
+                                        break
+                                break
+                        break
                 if not isexist1:
                     print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
                 else:
@@ -622,6 +677,9 @@ def compare_cmpr(line):
                                             vn.setValue(0)
                                         else:
                                             vn.setValue(-2)
+                                        break
+                                break
+                        break
                 if not isexist1:
                     print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
                 else:
@@ -662,6 +720,9 @@ def compare_cmpra(line):
                                             vn.setValue(0)
                                         else:
                                             vn.setValue(-2)
+                                        break
+                                break
+                        break
                 if not isexist1:
                     print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
                 else:
@@ -684,6 +745,7 @@ def varf(line):
         for vf in varflist:
             if ls[0] == vf.getName():
                 isexist = True
+                break
         if not isexist:
             varflist.append(vl.FuncVar(ls[0],ls[1]))
 
@@ -694,6 +756,7 @@ def fcall(line):
             if line == vf.getName():
                 isexist = True
                 lk.link(vf.getFile(), 0)
+                break
         if not isexist:
             print('\nVARF Error: \n >> ' + line + ' << don\'t exist\n')
     else:
@@ -712,8 +775,10 @@ def lt(line):
                         if ls[1] == vf.getName():
                             isexist2 = True
                             lk.link(vf.getFile(), 0)
+                            breakpoint
                 else:
                     isexist2 = True
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -735,8 +800,10 @@ def gt(line):
                         if ls[1] == vf.getName():
                             isexist2 = True
                             lk.link(vf.getFile(), 0)
+                            break
                 else:
                     isexist2 = True
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -759,8 +826,10 @@ def ne(line):
                         if ls[1] == vf.getName():
                             isexist2 = True
                             lk.link(vf.getFile(), 0)
+                            break
                 else:
                     isexist2 = True
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -782,8 +851,10 @@ def eq(line):
                         if ls[1] == vf.getName():
                             isexist2 = True
                             lk.link(vf.getFile(), 0)
+                            break
                 else:
                     isexist2 = True
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
@@ -804,6 +875,8 @@ def loop(line):
                     if ls[1] == vf.getName():
                         isexist2 = True
                         lk.link(vf.getFile(), 1, int(vn.getValue()))
+                        break
+                break
         if not isexist1:
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
