@@ -16,7 +16,7 @@ import libs.sys_methods as sm
 cmd = ['file','shell','help','quit','explorer']
 status = True
 help_message = '\n  => command list:\n                  file  : run a file\n                  shell : run a shell\n                  help  : show this help message\n                  quit  : close the main system "MAIN SYS"\n'
-help_message += '\n       Shell command list:\n                            help_shell : show the help message of the shell if you are in shell\n                            stop_shell : quit the shell if you are in shell\n'
+help_message += '\n       Shell command list:\n                            help_shell : show the help message about instructions if you are in shell\n                            stop_shell : quit the shell if you are in shell\n'
 help_message += '\n  >>> Other \"MAIN SYS\" command:\n                               explorer : open the \"Explorer SYS\"\n'
 
 print('\n\n Type help for show the help message \n\n Thanks for use this language :) \n\n')

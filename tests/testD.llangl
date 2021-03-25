@@ -1,0 +1,11 @@
+#LIBINC;
+#INC Random;
+#ENDINC;
+VARN a = 0;
+RND a : 1, 8;
+VARN a >;
+RND a : 1, 8;
+VARN a >;
+RND a : 1, 8;
+VARN a >;
+^

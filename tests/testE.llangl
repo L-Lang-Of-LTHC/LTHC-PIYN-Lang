@@ -1,0 +1,13 @@
+#LIBINC;
+#INC Random;
+#ENDINC;
+VARN a = 0;
+VARS a = 0;
+VARSA a = 0;
+RND a : 1, 8;
+VARN a >;
+RNDS a : 8;
+VARS a >;
+RNDA a : 8;
+VARSA a >;
+^

@@ -36,9 +36,22 @@ EQ = 'EQ'
 
 L = 'LOOP'
 
+# libs
+RNDN = 'RND'
+RNDS = 'RNDS'
+RNDA = 'RNDA'
+
 ############
 # METHODS
 ############
+
+def initlibs(libs):
+    if sm.libsincluded == 0:
+        if libs[0] == 1:
+            sm.libs[0] = 1
+        else:
+            sm.libs[0] = 0
+        sm.libsincluded == 1
 
 def readline(line,inshell):
     if inshell:
@@ -191,3 +204,24 @@ def readline(line,inshell):
                 line = line[len(EQ):len(line)]
                 sm.eq(line)
                 already = True
+            if sm.libs[0] == 1:
+                try:
+                    if lrn.ishere == 'yes':
+                        pass
+                except:
+                    try:
+                        import libs.libraries.random.rand_sys as lrn
+                    except:
+                        print('\nLibrary Including Error: verify if you have the L Lang Of LTHC included Random library')
+                if kl.hasKeyWord(line, RNDS) and not already:
+                    line = line[len(RNDS):len(line)]
+                    lrn.readline(line, 1)
+                    already = True
+                elif kl.hasKeyWord(line, RNDA) and not already:
+                    line = line[len(RNDA):len(line)]
+                    lrn.readline(line, 2)
+                    already = True
+                elif kl.hasKeyWord(line, RNDN) and not already:
+                    line = line[len(RNDN):len(line)]
+                    lrn.readline(line, 0)
+                    already = True

@@ -150,3 +150,29 @@
 
   < Shell help <  
   
+  > Other help >
+
+    Libraries:
+
+        For start a library inclusion: you have to start your file with:
+            #LIBINC;
+            #INC Name of the library;
+            #ENDINC
+        
+        Existing libraries:
+            Random
+        
+        Instructions of library:
+            
+            Random:
+                
+                RND name : minima, maxima
+                    set the value of the VARN type variable named name to a random number between minima and maxima included
+                
+                RNDS name : size
+                    set the value of the VARS type variable named name to a random char string of the size of size 
+                
+                RNDA name : size
+                    set the value of the VARSA type variable named name to a random char string of the size of size 
+
+  < Other help <
