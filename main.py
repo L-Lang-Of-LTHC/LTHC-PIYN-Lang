@@ -21,7 +21,7 @@ help_message += '\n       Shell command list:\n                            help_
 help_message += '\n  >>> Other \"MAIN SYS\" command:\n                               explorer : open the \"Explorer SYS\"\n'
 
 chk.print_info()
-print('\n\n Type help for show the help message \n\n Thanks for use this language :) \n\n')
+print('\n\n Type help to show the help message \n\n Thanks for using this language :) \n\n')
 
 while status:
     inp = ''

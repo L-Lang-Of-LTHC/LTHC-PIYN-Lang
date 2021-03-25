@@ -96,7 +96,7 @@
             set the value of the VARN type variable named name1 to the "HSMUDI" the VARS type variable named name2 
             for more details: see the source code of interpreter
         
-        /!\ The result of HSSUM is often different of the result of SSUM
+        /!\ The result of HSMUDI is often different of the result of SMUDI
     
     Comparison:
         CMP name1 : name2 => name3 
@@ -175,4 +175,5 @@
                 RNDA name : size
                     set the value of the VARSA type variable named name to a random char string of the size of size 
 
-  < Other help <
+  < Other help <  
+  
