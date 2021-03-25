@@ -1,0 +1,5 @@
+VARF 1 =tests/test2.llangl;
+VARF 2 =tests/test7.llangl;
+FCALL 1 ;
+FCALL 2 ;
+^

@@ -1,4 +1,4 @@
-VARF ne =tests/test2.txt;
+VARF ne =tests/test2.llangl;
 ^
 VARN a = 0;
 VARS b =Test;

@@ -14,22 +14,26 @@ import libs.readline as rl
 def run():
     wantedfile = ''
     wantedfile = input('File > ')
-    try:
-        wantedfile = open(wantedfile, 'r', encoding='utf-8')
-        tlines = wantedfile.readlines()
-        wantedfile.close()
+    if wantedfile.endswith('.llangl'):
+        try:
+            wantedfile = open(wantedfile, 'r+', encoding='utf-8')
+            wantedfile.write('')
+            tlines = wantedfile.readlines()
+            wantedfile.close()
 
-        lines = []
-        for i in tlines:
-            lines.append(i.replace('\n',''))
+            lines = []
+            for i in tlines:
+                lines.append(i.replace('\n',''))
 
-        for i in lines:
-            try:
-                rl.readline(i, False)
-            except:
-                print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
-    except:
-        print('\nFile not found\n')
+            for i in lines:
+                try:
+                    rl.readline(i, False)
+                except:
+                    print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
+        except:
+            print('\nFile not found\n')
+    else:
+        print('\nFile Extension Error: the extension must be \'.llang\'')
 
     t = None
     while t == None:
