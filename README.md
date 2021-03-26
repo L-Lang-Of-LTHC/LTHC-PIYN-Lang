@@ -1,8 +1,9 @@
-# L Lang of LTHC or also LTHC PIYN Lang
 <div align="center">
 <img src='img/logo.png'>
 <div/>
 <hr/>
+
+# L Lang of LTHC or also LTHC PIYN Lang
 
 ## What is L Lang of LTHC
 **L Lang of LTHC** is a programming language interpreted with Python. This langage is written in .llangl file
