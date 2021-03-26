@@ -1,5 +1,5 @@
 # L Lang of LTHC or also LTHC PIYN Lang
-<div>
+<div align="center">
 <img src='img/logo.png'>
 <div/>
 <hr/>
