@@ -2,6 +2,10 @@
 <img src='img/logo.png'>
 <div/>
 <hr/>
+<div align="left">
+<h2> <h2/>
+<div/>
+<hr/>
 
 # L Lang of LTHC or also LTHC PIYN Lang
 
