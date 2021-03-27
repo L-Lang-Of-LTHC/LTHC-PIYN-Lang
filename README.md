@@ -3,7 +3,6 @@
 <div/>
 <hr/>
 <div align="left">
-<h2> <h2/>
 <div/>
 <hr/>
 
