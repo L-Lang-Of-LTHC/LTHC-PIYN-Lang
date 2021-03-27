@@ -15,6 +15,7 @@ varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
 varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
 varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
 varflist = [vl.FuncVar('DefaultFuncVar_CreatedByLanguageSystem_00000000')]
+varnames = ['DefaultNumVar_CreatedByLanguageSystem_00000000','DefaultStrVar_CreatedByLanguageSystem_00000000','DefaultStrVarAll_CreatedByLanguageSystem_00000000','DefaultFuncVar_CreatedByLanguageSystem_00000000']
 libsincluded = 0
 libs = [0, 0]
 
@@ -53,7 +54,11 @@ def varn(line):
                 vn.setValue(float(ls[1]))
                 break
         if not isexist:
-            varnlist.append(vl.NumVar(ls[0],float(ls[1])))
+            if ls[0] not in varnames:
+                varnlist.append(vl.NumVar(ls[0],float(ls[1])))
+                varnames.append(ls[0])
+            else:
+                print('\n Variable Naming Error: two variables cannot have the same name')
         already = True
     elif '>' in line and not already:
         ls = line.split('>')
@@ -206,7 +211,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist1 = True
                 for vs in varsalist:
-                    if ls[0] == vs.getName():
+                    if ls[1] == vs.getName():
                         isexist2 = True
                         try:
                             vn.setValue(float(vs.getValue()))
@@ -218,7 +223,7 @@ def varn(line):
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARSA Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
     elif '#s' in line and not already:
         ls = line.split('#s')
@@ -228,7 +233,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist1 = True
                 for vs in varslist:
-                    if ls[0] == vs.getName():
+                    if ls[1] == vs.getName():
                         isexist2 = True
                         try:
                             vn.setValue(float(vs.getValue()))
@@ -240,7 +245,7 @@ def varn(line):
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
     elif '#' in line and not already:
         ls = line.split('#')
@@ -250,7 +255,7 @@ def varn(line):
             if ls[0] == vn.getName():
                 isexist1 = True
                 for vs in varslist:
-                    if ls[0] == vs.getName():
+                    if ls[1] == vs.getName():
                         isexist2 = True
                         try:
                             vn.setValue(float(vs.getValue()))
@@ -262,7 +267,7 @@ def varn(line):
             print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
 
 def vars(line):
@@ -276,7 +281,11 @@ def vars(line):
                 vs.setValue(ls[1])
                 break
         if not isexist:
-            varslist.append(vl.StrVar(ls[0],ls[1]))
+            if ls[0] not in varnames:
+                varslist.append(vl.StrVar(ls[0],ls[1]))
+                varnames.append(ls[0])
+            else:
+                print('\n Variable Naming Error: two variables cannot have the same name')
         already = True
     elif '>' in line and not already:
         ls = line.split('>')
@@ -347,7 +356,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist1 = True
                 for vn in varnlist:
-                    if ls[0] == vn.getName():
+                    if ls[1] == vn.getName():
                         isexist2 = True
                         vs.setValue(str(vn.getValue()))
                         break
@@ -356,7 +365,7 @@ def vars(line):
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
     elif '#' in line and not already:
         ls = line.split('#')
@@ -366,7 +375,7 @@ def vars(line):
             if ls[0] == vs.getName():
                 isexist1 = True
                 for vs2 in varsalist:
-                    if ls[0] == vs2.getName():
+                    if ls[1] == vs2.getName():
                         isexist2 = True
                         vs.setValue(vs2.getValue())
                         break
@@ -375,7 +384,7 @@ def vars(line):
             print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARSA Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
 
 def varsa(line):
@@ -389,7 +398,11 @@ def varsa(line):
                 vs.setValue(ls[1])
                 break
         if not isexist:
-            varsalist.append(vl.StrVarAll(ls[0],ls[1]))
+            if ls[0] not in varnames:
+                varsalist.append(vl.StrVarAll(ls[0],ls[1]))
+                varnames.append(ls[0])
+            else:
+                print('\n Variable Naming Error: two variables cannot have the same name')
         already = True
     elif '>' in line and not already:
         ls = line.split('>')
@@ -438,7 +451,7 @@ def varsa(line):
             if ls[0] == vs.getName():
                 isexist1 = True
                 for vn in varnlist:
-                    if ls[0] == vn.getName():
+                    if ls[1] == vn.getName():
                         isexist2 = True
                         vs.setValue(str(vn.getValue()))
                         break
@@ -447,7 +460,7 @@ def varsa(line):
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
     elif '#' in line and not already:
         ls = line.split('#')
@@ -457,7 +470,7 @@ def varsa(line):
             if ls[0] == vs.getName():
                 isexist1 = True
                 for vs2 in varslist:
-                    if ls[0] == vs2.getName():
+                    if ls[1] == vs2.getName():
                         isexist2 = True
                         vs.setValue(vs2.getValue())
                         break
@@ -466,7 +479,7 @@ def varsa(line):
             print('\nVARSA Error: \n >> ' + ls[0] + ' << don\'t exist\n')
         else:
             if not isexist2:
-                print('\nVARS Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
 
 def ssum(line):
@@ -749,7 +762,11 @@ def varf(line):
                 isexist = True
                 break
         if not isexist:
-            varflist.append(vl.FuncVar(ls[0],ls[1]))
+            if ls[0] not in varnames:
+                varflist.append(vl.FuncVar(ls[0],ls[1]))
+                varnames.append(ls[0])
+            else:
+                print('\n Variable Naming Error: two variables cannot have the same name')
 
 def fcall(line):
     if len(line) > 0:

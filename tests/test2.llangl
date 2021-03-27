@@ -28,8 +28,8 @@ VARS b --;
 VARS b >;
 ^
 ^
-VARSA c =test;
-VRASA c >;
-VARSA c + c ;
-VARSA c >;
+VARSA d =test;
+VRASA d >;
+VARSA d + d ;
+VARSA d >;
 ^

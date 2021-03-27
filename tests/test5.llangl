@@ -1,5 +1,5 @@
 VARS a =ABCabc;
-VARN a = 0;
-SSUM a = a ;
-VARN a >;
+VARN b = 0;
+SSUM b = a ;
+VARN b >;
 ^

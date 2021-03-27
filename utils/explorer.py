@@ -25,6 +25,7 @@ def run():
             sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
             sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
             sm.varflist = [vl.FuncVar('DefaultFuncVar_CreatedByLanguageSystem_00000000')]
+            sm.varnames = ['DefaultNumVar_CreatedByLanguageSystem_00000000','DefaultStrVar_CreatedByLanguageSystem_00000000','DefaultStrVarAll_CreatedByLanguageSystem_00000000','DefaultFuncVar_CreatedByLanguageSystem_00000000']
             print('\n  Variables Cleared  \n')
         if inp == cmd[2]:
             status = False

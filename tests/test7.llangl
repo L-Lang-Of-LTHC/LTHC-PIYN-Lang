@@ -1,10 +1,10 @@
 VARS a =ABCabc  àé\n;
 VARS a >;
 ^
-VARN a = 0;
-SMUDI a = a ;
-VARN a >;
+VARN b = 0;
+SMUDI b = a ;
+VARN b >;
 ^
-HSMUDI a = a ;
-VARN a >;
+HSMUDI b = a ;
+VARN b >;
 ^

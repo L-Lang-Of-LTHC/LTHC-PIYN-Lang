@@ -1,10 +1,10 @@
 VARS a =ABCabc  àé\n;
 VARS a >;
 ^
-VARN a = 0;
-SSUM a = a ;
-VARN a >;
+VARN b = 0;
+SSUM b = a ;
+VARN b >;
 ^
-HSSUM a = a ;
-VARN a >;
+HSSUM b = a ;
+VARN b >;
 ^
