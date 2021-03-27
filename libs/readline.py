@@ -41,6 +41,10 @@ RNDN = 'RND'
 RNDS = 'RNDS'
 RNDA = 'RNDA'
 
+B8 = 'BIN8'
+B16 = 'BIN16'
+B32 = 'BIN32'
+
 ############
 # METHODS
 ############
@@ -51,6 +55,10 @@ def initlibs(libs):
             sm.libs[0] = 1
         else:
             sm.libs[0] = 0
+        if libs[1] == 1:
+            sm.libs[1] = 1
+        else:
+            sm.libs[1] = 0
         sm.libsincluded == 1
 
 def readline(line,inshell):
@@ -225,3 +233,23 @@ def readline(line,inshell):
                     line = line[len(RNDN):len(line)]
                     lrn.readline(line, 0)
                     already = True
+            if sm.libs[1] == 1:
+                try:
+                    if lbsm.ishere == 'yes':
+                        pass
+                except:
+                    try:
+                        import libs.libraries.binary.binary_sm as lbsm
+                    except:
+                        print('\nLibrary Including Error: verify if you have the L Lang Of LTHC included Binary library')
+                if kl.hasKeyWord(line, B8) and not already:
+                    line = line[len(B8):len(line)]
+                    lbsm.readline(line, 0)
+                    already = True
+                elif kl.hasKeyWord(line, B16) and not already:
+                    line = line[len(B16):len(line)]
+                    lbsm.readline(line, 1)
+                    already = True
+                elif kl.hasKeyWord(line, B32) and not already:
+                    line = line[len(B32):len(line)]
+                    lbsm.readline(line, 2)

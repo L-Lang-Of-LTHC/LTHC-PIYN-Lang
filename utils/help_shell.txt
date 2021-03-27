@@ -161,6 +161,7 @@
         
         Existing libraries:
             Random
+            Binary
         
         Instructions of library:
             
@@ -174,6 +175,47 @@
                 
                 RNDA name : size
                     set the value of the VARSA type variable named name to a random char string of the size of size 
+            
+            Binary:
+                
+                BIN8 name = bvalue
+                    Create a variable with a bvalue = bvalue or change the bvalue of an existant variable to bvalue
+                BIN8 name >
+                    Print the bvalue of the variable
+                BIN8 name <
+                    A user input who ask to user to enter a bvalue for the variable
+                BIN8 name =n value
+                    change the bvalue of an existant variable to value, value must be an unsigned integer
+                BIN8 name >n
+                    Print the unsigned integer representation of the bvalue of the variable
+                BIN8 name <n
+                    A user input who ask to user to enter an unsigned integer for the variable
+                
+                BIN16 name = bvalue
+                    Create a variable with a bvalue = bvalue or change the bvalue of an existant variable to bvalue
+                BIN16 name >
+                    Print the bvalue of the variable
+                BIN16 name <
+                    A user input who ask to user to enter a bvalue for the variable
+                BIN16 name =n value
+                    change the bvalue of an existant variable to value, value must be an unsigned integer
+                BIN16 name >n
+                    Print the unsigned integer representation of the bvalue of the variable
+                BIN16 name <n
+                    A user input who ask to user to enter an unsigned integer for the variable
+                
+                BIN32 name = bvalue
+                    Create a variable with a bvalue = bvalue or change the bvalue of an existant variable to bvalue
+                BIN32 name >
+                    Print the bvalue of the variable
+                BIN32 name <
+                    A user input who ask to user to enter a bvalue for the variable
+                BIN32 name =n value
+                    change the bvalue of an existant variable to value, value must be an unsigned integer
+                BIN32 name >n
+                    Print the unsigned integer representation of the bvalue of the variable
+                BIN32 name <n
+                    A user input who ask to user to enter an unsigned integer for the variable
 
   < Other help <  
   

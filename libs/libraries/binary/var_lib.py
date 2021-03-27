@@ -66,6 +66,7 @@ class Bin8:
     
     #Usefull method
     def conversion(self, value):
+        value = abs(value)
         temp = ''
         t = 0
 
@@ -130,6 +131,7 @@ class Bin16:
     
     #Usefull method
     def conversion(self, value):
+        value = abs(value)
         temp = ''
         t = 0
 
@@ -194,6 +196,7 @@ class Bin32:
     
     #Usefull method
     def conversion(self, value):
+        value = abs(value)
         temp = ''
         t = 0
 
