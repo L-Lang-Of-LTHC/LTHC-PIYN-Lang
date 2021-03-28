@@ -6,7 +6,6 @@
 # IMPORTS
 ############
 import libs.readline as rl
-import libs.sys_methods as sm
 
 ###############
 # Claim file
@@ -56,4 +55,3 @@ def run():
     t = None
     while t == None:
         t = input('')
-    sm.varnames = ['DefaultNumVar_CreatedByLanguageSystem_00000000','DefaultStrVar_CreatedByLanguageSystem_00000000','DefaultStrVarAll_CreatedByLanguageSystem_00000000','DefaultFuncVar_CreatedByLanguageSystem_00000000']

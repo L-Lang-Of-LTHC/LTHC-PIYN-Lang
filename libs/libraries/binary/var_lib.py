@@ -61,6 +61,13 @@ class Bin8:
         else:
             if type(value) == int:
                 self.value = self.conversion(value)
+                temp = self.value
+                if len(temp) < 8:
+                    for i in range(8-len(temp)):
+                        temp = '0' + temp
+                if len(temp) > 8:
+                    temp = temp[-8:len(temp)]
+                self.value = temp
             else:
                 print('\nLibrary Error: Binary: The specify value must be an integer')
     
@@ -126,6 +133,13 @@ class Bin16:
         else:
             if type(value) == int:
                 self.value = self.conversion(value)
+                temp = self.value
+                if len(temp) < 16:
+                    for i in range(16-len(temp)):
+                        temp = '0' + temp
+                if len(temp) > 16:
+                    temp = temp[-16:len(temp)]
+                self.value = temp
             else:
                 print('\nLibrary Error: Binary: The specify value must be an integer')
     
@@ -191,6 +205,13 @@ class Bin32:
         else:
             if type(value) == int:
                 self.value = self.conversion(value)
+                temp = self.value
+                if len(temp) < 32:
+                    for i in range(32-len(temp)):
+                        temp = '0' + temp
+                if len(temp) > 32:
+                    temp = temp[-32:len(temp)]
+                self.value = temp
             else:
                 print('\nLibrary Error: Binary: The specify value must be an integer')
     
