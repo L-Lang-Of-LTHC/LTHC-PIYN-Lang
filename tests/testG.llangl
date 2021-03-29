@@ -1,0 +1,19 @@
+#LIBINC;
+#INC Random;
+#INC Binary;
+#ENDINC;
+BIN8 a = 00000000;
+BIN8 a :r;
+BIN8 a >;
+BIN8 a >n;
+^
+BIN16 b = 0000000000000000;
+BIN16 b :r;
+BIN16 b >;
+BIN16 b >n;
+^
+BIN32 c = 00000000000000000000000000000000;
+BIN32 c :r;
+BIN32 c >;
+BIN32 c >n;
+^

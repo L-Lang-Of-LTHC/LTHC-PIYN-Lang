@@ -234,22 +234,49 @@ def readline(line,inshell):
                     lrn.readline(line, 0)
                     already = True
             if sm.libs[1] == 1:
+                already = False
+                if ':r' in line and not already:
+                    runBin(line, 0)
+                    already = True
+                if not ':r' in line and not already:
+                    runBin(line, 1)
+
+def runBin(line, mode):
+    if mode == 0:
+        if sm.libs[0] == 1 and sm.libs[1] == 1:
                 try:
-                    if lbsm.ishere == 'yes':
+                    if lcbr.ishere == 'yes':
                         pass
                 except:
                     try:
-                        import libs.libraries.binary.binary_sm as lbsm
+                        import libs.libraries.crossed.binary_random.rand_bin as lcbr
                     except:
-                        print('\nLibrary Including Error: verify if you have the L Lang Of LTHC included Binary library')
-                if kl.hasKeyWord(line, B8) and not already:
+                        print('\nLibrary Including Error: verify if you have the L Lang Of LTHC included Crossed Random and Binary library system')
+                if kl.hasKeyWord(line, B8):
                     line = line[len(B8):len(line)]
-                    lbsm.readline(line, 0)
-                    already = True
-                elif kl.hasKeyWord(line, B16) and not already:
+                    lcbr.readline(line, 0)
+                elif kl.hasKeyWord(line, B16):
                     line = line[len(B16):len(line)]
-                    lbsm.readline(line, 1)
-                    already = True
-                elif kl.hasKeyWord(line, B32) and not already:
+                    lcbr.readline(line, 1)
+                elif kl.hasKeyWord(line, B32):
                     line = line[len(B32):len(line)]
-                    lbsm.readline(line, 2)
+                    lcbr.readline(line, 2)
+    if mode == 1:
+        if sm.libs[1] == 1:
+            try:
+                if lbsm.ishere == 'yes':
+                    pass
+            except:
+                try:
+                    import libs.libraries.binary.binary_sm as lbsm
+                except:
+                    print('\nLibrary Including Error: verify if you have the L Lang Of LTHC included Binary library')
+            if kl.hasKeyWord(line, B8):
+                line = line[len(B8):len(line)]
+                lbsm.readline(line, 0)
+            elif kl.hasKeyWord(line, B16):
+                line = line[len(B16):len(line)]
+                lbsm.readline(line, 1)
+            elif kl.hasKeyWord(line, B32):
+                line = line[len(B32):len(line)]
+                lbsm.readline(line, 2)
