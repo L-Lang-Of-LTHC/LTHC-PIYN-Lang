@@ -1,6 +1,6 @@
 <div align="center">
 <img src='img/logo.png'>
-<img src='img/main.py.screen.sure.png'>
+<img src='img/main.py.screen.perfect.png'>
 <div/>
 <hr/>
 <div align="left">

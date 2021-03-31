@@ -216,6 +216,15 @@
                     Print the unsigned integer representation of the bvalue of the variable
                 BIN32 name <n
                     A user input who ask to user to enter an unsigned integer for the variable
+            
+            Random and Binary:
+                
+                BIN8 name :r
+                    Set the bvalue of the variable named name to a random bvalue
+                BIN16 name :r
+                    Set the bvalue of the variable named name to a random bvalue
+                BIN32 name :r
+                    Set the bvalue of the variable named name to a random bvalue
 
   < Other help <  
   

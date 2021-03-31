@@ -36,7 +36,7 @@ class Bin8:
         out = 0
         for i in range(len(self.value)):
             if self.value[i] == '1':
-                out += 2**i
+                out += 2**(8-i-1)
         return out
     def getName(self):
         return self.name
@@ -108,7 +108,7 @@ class Bin16:
         out = 0
         for i in range(len(self.value)):
             if self.value[i] == '1':
-                out += 2**i
+                out += 2**(16-i-1)
         return out
     def getName(self):
         return self.name
@@ -180,7 +180,7 @@ class Bin32:
         out = 0
         for i in range(len(self.value)):
             if self.value[i] == '1':
-                out += 2**i
+                out += 2**(32-i-1)
         return out
     def getName(self):
         return self.name
