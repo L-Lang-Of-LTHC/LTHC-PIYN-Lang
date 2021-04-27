@@ -4,12 +4,12 @@
 
 _version_state = '[DEV]'
 _version_num = '0.0.1'
-_version_subnum = 'a1'
-_version_release_date = 'y2021/m03/d31'
+_version_subnum = 'b'
+_version_release_date = 'y2021/m04/d27'
 
 _libs_list = 'Random, Binary'
 
-_software_name = '[L Lang of LTHC] noLevel'
+_software_name = '[L Lang of LTHC] startingBlock'
 
 _code_extension = '.llangl'
 
