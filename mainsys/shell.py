@@ -9,21 +9,12 @@ import libs.readline as rl
 from datetime import date as dt
 import libs.sys_methods as sm
 import libs.var_lib as vl
+import utils.help_shell as hlpsh
 
 ##########
 # Shell
 ##########
-hlp_msg = ''
-try:
-    fhlp = open('utils/help_shell.txt','r',encoding='utf-8')
-
-    tmpa = fhlp.readlines()
-    for i in tmpa:
-        hlp_msg += i
-
-    fhlp.close()
-except:
-    print('\n\'utils/help_shell\' not found\n')
+hlp_msg = hlpsh.get_help()
 
 def run():
     ec = 'stop_shell'
