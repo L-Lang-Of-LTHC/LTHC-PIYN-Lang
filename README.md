@@ -1,6 +1,8 @@
 <div align="center">
 <img src='img/logo.png'>
-<img src='img/main.py.screen.latest.png'>
+<div/>
+<div align="center">
+<img src='img/main.py.screen.latest_new.png'>
 <div/>
 <hr/>
 <div align="left">

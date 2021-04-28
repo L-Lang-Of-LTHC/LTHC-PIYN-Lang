@@ -1,6 +1,3 @@
-#LIBINC;
-#INC Binary;
-#ENDINC;
 BIN8 a = 11111110;
 BIN8 a >;
 BIN8 a >n;

@@ -8,7 +8,6 @@
 import mainsys.byfile as bf
 import mainsys.shell as sh
 import utils.explorer as ep
-import libs.sys_methods as sm
 import settings.checker as chk
 
 ###########

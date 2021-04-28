@@ -2,8 +2,6 @@
 
 # ./libs/libraries/binary/binary_sm.py  =>  contains binary library methods
 
-
-ishere = 'yes'
 ############
 # IMPORTS
 ############

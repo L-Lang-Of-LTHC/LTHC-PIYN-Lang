@@ -16,8 +16,6 @@ varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
 varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
 varflist = [vl.FuncVar('DefaultFuncVar_CreatedByLanguageSystem_00000000')]
 varnames = ['DefaultNumVar_CreatedByLanguageSystem_00000000','DefaultStrVar_CreatedByLanguageSystem_00000000','DefaultStrVarAll_CreatedByLanguageSystem_00000000','DefaultFuncVar_CreatedByLanguageSystem_00000000']
-libsincluded = 0
-libs = [0, 0]
 
 def scan():
     out = '\n'

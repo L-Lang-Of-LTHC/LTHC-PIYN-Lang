@@ -7,8 +7,6 @@
 ############
 import libs.readline as rl
 from datetime import date as dt
-import libs.sys_methods as sm
-import libs.var_lib as vl
 import utils.help_shell as hlpsh
 
 ##########

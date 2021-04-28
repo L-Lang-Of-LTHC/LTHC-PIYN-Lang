@@ -25,22 +25,6 @@ def run():
             for i in tlines:
                 lines.append(i.replace('\n',''))
 
-            libs = [0, 0]
-
-            islibs = 0
-
-            for i in lines:
-                if i == '#LIBINC;' and islibs == 0:
-                    islibs = 1
-                if i == '#INC Random;' and islibs == 1:
-                    libs[0] = 1
-                if i == '#INC Binary;' and islibs == 1:
-                    libs[1] = 1
-                if i == '#ENDINC;' and islibs == 1:
-                    break
-            
-            rl.initlibs(libs)
-
             for i in lines:
                 try:
                     rl.readline(i, False)
