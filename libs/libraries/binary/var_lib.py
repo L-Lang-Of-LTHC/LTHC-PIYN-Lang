@@ -69,7 +69,7 @@ class Bin8:
                     temp = temp[-8:len(temp)]
                 self.value = temp
             else:
-                print('\nLibrary Error: Binary: The specify value must be an integer')
+                print('\nError: Binary: The specify value must be an integer')
     
     #Usefull method
     def conversion(self, value):
@@ -141,7 +141,7 @@ class Bin16:
                     temp = temp[-16:len(temp)]
                 self.value = temp
             else:
-                print('\nLibrary Error: Binary: The specify value must be an integer')
+                print('\nError: Binary: The specify value must be an integer')
     
     #Usefull method
     def conversion(self, value):
@@ -213,7 +213,7 @@ class Bin32:
                     temp = temp[-32:len(temp)]
                 self.value = temp
             else:
-                print('\nLibrary Error: Binary: The specify value must be an integer')
+                print('\nError: Binary: The specify value must be an integer')
     
     #Usefull method
     def conversion(self, value):

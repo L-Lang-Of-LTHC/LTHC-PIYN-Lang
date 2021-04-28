@@ -34,7 +34,7 @@ def readline(line, mode):
                     vb.setValueNum(int(ls[1]))
                     break
             if not isexist:
-                    print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                    print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '>n' in line and not already:
             ls = line.split('>n')
@@ -45,7 +45,7 @@ def readline(line, mode):
                     print(vb.getValueNum())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<n' in line and not already:
             ls = line.split('<n')
@@ -53,14 +53,14 @@ def readline(line, mode):
             for vb in varb8list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN8 > ')
+                    temp = input(' Binary BIN8 (Integer) > ')
                     try:
                         vb.setValueNum(int(temp))
                     except:
                         print('\nInput error: you have to give an integer\n')
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         if '=' in line and not already:
             ls = line.split('=')
@@ -86,7 +86,7 @@ def readline(line, mode):
                     print(vb.getValue())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<' in line and not already:
             ls = line.split('<')
@@ -94,11 +94,11 @@ def readline(line, mode):
             for vb in varb8list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN8 > ')
+                    temp = input(' Binary BIN8 > ')
                     vb.setValue(temp)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
     if mode == 1:
         already = False
@@ -111,7 +111,7 @@ def readline(line, mode):
                     vb.setValueNum(int(ls[1]))
                     break
             if not isexist:
-                    print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                    print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '>n' in line and not already:
             ls = line.split('>n')
@@ -122,7 +122,7 @@ def readline(line, mode):
                     print(vb.getValueNum())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<n' in line and not already:
             ls = line.split('<n')
@@ -130,14 +130,14 @@ def readline(line, mode):
             for vb in varb16list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN16 > ')
+                    temp = input(' Binary BIN16 (Integer) > ')
                     try:
                         vb.setValueNum(int(temp))
                     except:
                         print('\nInput error: you have to give an integer\n')
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         if '=' in line and not already:
             ls = line.split('=')
@@ -163,7 +163,7 @@ def readline(line, mode):
                     print(vb.getValue())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<' in line and not already:
             ls = line.split('<')
@@ -171,11 +171,11 @@ def readline(line, mode):
             for vb in varb16list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN16 > ')
+                    temp = input(' Binary BIN16 > ')
                     vb.setValue(temp)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
     if mode == 2:
         already = False
@@ -188,7 +188,7 @@ def readline(line, mode):
                     vb.setValueNum(int(ls[1]))
                     break
             if not isexist:
-                    print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                    print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '>n' in line and not already:
             ls = line.split('>n')
@@ -199,7 +199,7 @@ def readline(line, mode):
                     print(vb.getValueNum())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<n' in line and not already:
             ls = line.split('<n')
@@ -207,14 +207,14 @@ def readline(line, mode):
             for vb in varb32list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN32 > ')
+                    temp = input(' Binary BIN32 (Integer) > ')
                     try:
                         vb.setValueNum(int(temp))
                     except:
                         print('\nInput error: you have to give an integer\n')
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         if '=' in line and not already:
             ls = line.split('=')
@@ -240,7 +240,7 @@ def readline(line, mode):
                     print(vb.getValue())
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True
         elif '<' in line and not already:
             ls = line.split('<')
@@ -248,9 +248,9 @@ def readline(line, mode):
             for vb in varb32list:
                 if ls[0] == vb.getName():
                     isexist = True
-                    temp = input(' Binary Lib BIN32 > ')
+                    temp = input(' Binary BIN32 > ')
                     vb.setValue(temp)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
             already = True

@@ -6,6 +6,7 @@
 # IMPORTS
 ############
 import libs.readline as rl
+import utils.explorer as ep
 
 ###############
 # Claim file
@@ -24,6 +25,8 @@ def run():
             lines = []
             for i in tlines:
                 lines.append(i.replace('\n',''))
+
+            ep.clear()
 
             for i in lines:
                 try:

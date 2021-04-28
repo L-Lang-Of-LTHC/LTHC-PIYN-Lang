@@ -2,8 +2,6 @@
 
 # ./libs/libraries/crossed/binary_random/rand_bin.py  =>  contains random crossed binary librairy
 
-
-ishere = 'yes'
 ############
 # IMPORTS
 ############
@@ -32,7 +30,7 @@ def readline(line, mode):
                     vb.setValue(rb)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
     if mode == 1:
         if ':r' in line:
             ls = line.split(':r')
@@ -44,7 +42,7 @@ def readline(line, mode):
                     vb.setValue(rb)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
     if mode == 2:
         if ':r' in line:
             ls = line.split(':r')
@@ -56,4 +54,4 @@ def readline(line, mode):
                     vb.setValue(rb)
                     break
             if not isexist:
-                print('\nLibrary Error: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')

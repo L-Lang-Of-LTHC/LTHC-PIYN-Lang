@@ -2,8 +2,6 @@
 
 # ./libs/libraries/random/rand_sys.py  =>  contains random library instructions analyzer
 
-
-ishere = 'yes'
 ############
 # IMPORTS
 ############
@@ -26,9 +24,9 @@ def readline(line,mode):
                         vn.setValue(lrl.rnd_num(int(ls[1]), int(ls[2])))
                         break
             else:
-                print('\Library Error: Random: missing \',\' minima and maxima')
+                print('Error: Random: missing \',\' minima and maxima')
         else:
-            print('\Library Error: Random: missing \':\' between VARN type variable and minima')
+            print('Error: Random: missing \':\' between VARN type variable and minima')
     if mode == 1:
         if ':' in line:
             ls = line.split(':')
@@ -37,7 +35,7 @@ def readline(line,mode):
                     vs.setValue(lrl.rnd_str(int(ls[1])))
                     break
         else:
-            print('\Library Error: Random: missing \':\' between VARS type variable and wanted number of char')
+            print('Error: Random: missing \':\' between VARS type variable and wanted number of char')
     if mode == 2:
         if ':' in line:
             ls = line.split(':')
@@ -46,4 +44,4 @@ def readline(line,mode):
                     vsa.setValue(lrl.rnd_str(int(ls[1])))
                     break
         else:
-            print('\Library Error: Random: missing \':\' between VARSA type variable and wanted number of char')
+            print('Error: Random: missing \':\' between VARSA type variable and wanted number of char')

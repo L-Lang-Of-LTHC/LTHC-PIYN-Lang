@@ -7,6 +7,7 @@
 ############
 import libs.var_lib as vl
 import utils.linker as lk
+import libs.libraries.binary.binary_sm as bsm
 
 ############
 # Usefull
@@ -266,6 +267,72 @@ def varn(line):
         else:
             if not isexist2:
                 print('\nVARS Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    elif 'b!32' in line and not already:
+        ls = line.split('b!32')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vb in bsm.varb32list:
+                    if ls[1] == vb.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vb.getValueNum()))
+                        except:
+                            print('\nCasting error\n')
+                        break
+                break
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nError: Binary: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    elif 'b!16' in line and not already:
+        ls = line.split('b!16')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vb in bsm.varb16list:
+                    if ls[1] == vb.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vb.getValueNum()))
+                        except:
+                            print('\nCasting error\n')
+                        break
+                break
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nError: Binary: \n >> ' + ls[1] + ' << don\'t exist\n')
+        already = True
+    elif 'b!8' in line and not already:
+        ls = line.split('b!8')
+        isexist1 = False
+        isexist2 = False
+        for vn in varnlist:
+            if ls[0] == vn.getName():
+                isexist1 = True
+                for vb in bsm.varb8list:
+                    if ls[1] == vb.getName():
+                        isexist2 = True
+                        try:
+                            vn.setValue(float(vb.getValueNum()))
+                        except:
+                            print('\nCasting error\n')
+                        break
+                break
+        if not isexist1:
+            print('\nVARN Error: \n >> ' + ls[0] + ' << don\'t exist\n')
+        else:
+            if not isexist2:
+                print('\nError: Binary: \n >> ' + ls[1] + ' << don\'t exist\n')
         already = True
 
 def vars(line):
