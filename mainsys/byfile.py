@@ -16,10 +16,10 @@ def run():
     wantedfile = input('File > ')
     if wantedfile.endswith('.llangl'):
         try:
-            wantedfile = open(wantedfile, 'r+', encoding='utf-8')
-            wantedfile.write('')
-            tlines = wantedfile.readlines()
-            wantedfile.close()
+            file = open(wantedfile, 'r+', encoding='utf-8')
+            file.write('')
+            tlines = file.readlines()
+            file.close()
 
             lines = []
             for i in tlines:
@@ -29,8 +29,7 @@ def run():
                 try:
                     rl.readline(i, False)
                 except:
-                    print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
-                    print('\n >>>   ' + i + '   <<< \n')
+                    print(f"\n  >>> An error blocks the normal behaviour of the program <<<  \n  >>> running file: {wantedfile} <<<\n  >>> Line: {i+1} <<<\n")
         except:
             print('\nFile not found\n')
     else:

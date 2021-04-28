@@ -30,7 +30,7 @@ def run(file):
                 try:
                     rl.readline(i, False)
                 except:
-                    print('\n  >>> An error blocks the normal behaviour of the program <<<  \n')
+                    print(f"\n  >>> An error blocks the normal behaviour of the program <<<  \n  >>> running file: {file} <<<\n  >>> Line: {i+1} <<<\n")
         except:
             print('\nFile not found\n')
     else:
