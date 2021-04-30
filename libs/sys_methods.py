@@ -36,6 +36,18 @@ def scan():
         out += '\n  VARF > \n'
         for i in range(1, len(varflist)):
             out += '    ' + varflist[i].getName() + ' :> ' + str(varflist[i].getFile()) + ' \n'
+    if len(bsm.varb8list) > 1:
+        out += '\n  BIN8 > \n'
+        for i in range(1, len(bsm.varb8list)):
+            out += '    ' + bsm.varb8list[i].getName() + ' :> ' + bsm.varb8list[i].getValue() + ' \n'
+    if len(bsm.varb16list) > 1:
+        out += '\n  BIN16 > \n'
+        for i in range(1, len(bsm.varb16list)):
+            out += '    ' + bsm.varb16list[i].getName() + ' :> ' + bsm.varb16list[i].getValue() + ' \n'
+    if len(bsm.varb32list) > 1:
+        out += '\n  BIN32 > \n'
+        for i in range(1, len(bsm.varb32list)):
+            out += '    ' + bsm.varb32list[i].getName() + ' :> ' + bsm.varb32list[i].getValue() + ' \n'
     return out
 
 ############

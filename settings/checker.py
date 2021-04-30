@@ -4,8 +4,8 @@
 
 _version_state = '[DEV]'
 _version_num = '0.0.1'
-_version_subnum = 'c'
-_version_release_date = 'y2021/m04/d28'
+_version_subnum = 'c1'
+_version_release_date = 'y2021/m04/d30'
 
 _software_name = '[L Lang of LTHC] startingBlock'
 
