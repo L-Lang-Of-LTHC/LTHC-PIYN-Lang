@@ -14,22 +14,27 @@ import utils.help_shell as hlpsh
 ##########
 hlp_msg = hlpsh.get_help()
 
-def run():
-    ec = 'stop_shell'
-    hlp = 'help_shell'
-    status = True
-    while status:
-        sht = str(dt.today()) + ' :> Shell > '
-        line = input(sht)
-        if line == ec:
-            status = False
-            break
-        if line == hlp:
-            print(hlp_msg)
-        if line != hlp:
-            rl.readline(line, True)
-    print('\n >>> Shell stopped <<< \n')
+def run(mode = 0):
+    if mode == 0:
+        ec = 'stop_shell'
+        hlp = 'help_shell'
+        status = True
+        while status:
+            sht = str(dt.today()) + ' :> Shell > '
+            line = input(sht)
+            if line == ec:
+                status = False
+                break
+            if line == hlp:
+                print(hlp_msg)
+            if line != hlp:
+                rl.readline(line, True)
+        print('\n >>> Shell stopped <<< \n')
 
-    t = None
-    while t == None:
-        t = input('')
+        t = None
+        while t == None:
+            t = input('')
+    else:
+        sht = str(dt.today()) + ' :> Shell > '
+        print(sht)
+        print('\n >>> Shell stopped <<< \n')

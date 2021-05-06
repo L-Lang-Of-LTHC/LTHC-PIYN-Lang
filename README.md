@@ -2,7 +2,7 @@
 <img src='img/logo.png'>
 <div/>
 <div align="center">
-<img src='img/main.py.screen.latest_good_yes.png'>
+<img src='img/main.py.screen.now.png'>
 <div/>
 <hr/>
 <div align="left">

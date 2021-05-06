@@ -9,13 +9,14 @@ import mainsys.byfile as bf
 import mainsys.shell as sh
 import utils.explorer as ep
 import settings.checker as chk
+import settings.tests_runner as tstrn
 
 ###########
 # System
 ###########
-cmd = ['file','shell','help','quit','explorer']
+cmd = ['file','shell','help','quit','explorer','run_test']
 status = True
-help_message = '\n  => command list:\n                  file  : run a file\n                  shell : run a shell\n                  help  : show this help message\n                  quit  : close the main system "MAIN SYS"\n'
+help_message = '\n  => command list:\n                  file  : run a file\n                  shell : run a shell\n                  help  : show this help message\n                  quit  : close the main system "MAIN SYS"\n\n                run_test : Launch a test on all test program (use that only if you have the tests folder provided with source code)\n'
 help_message += '\n       Shell command list:\n                            help_shell : show the help message about instructions if you are in shell\n                            stop_shell : quit the shell if you are in shell\n'
 help_message += '\n  >>> Other \"MAIN SYS\" command:\n                               explorer : open the \"Explorer SYS\"\n'
 
@@ -37,3 +38,5 @@ while status:
         status = False
     if inp == cmd[4]:
         ep.run()
+    if inp == cmd[5]:
+        tstrn.run()

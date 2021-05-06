@@ -10,7 +10,7 @@ import libs.var_lib as vl
 import libs.libraries.binary.binary_sm as bsm
 
 ####################################################
-def clear():
+def clear(mshell = 0):
     sm.varnlist = [vl.NumVar('DefaultNumVar_CreatedByLanguageSystem_00000000')]
     sm.varslist = [vl.StrVar('DefaultStrVar_CreatedByLanguageSystem_00000000')]
     sm.varsalist = [vl.StrVarAll('DefaultStrVarAll_CreatedByLanguageSystem_00000000')]
@@ -20,6 +20,8 @@ def clear():
     bsm.varb16list = [bsm.bvl.Bin16('DefaultBin16_CreatedByLanguageSystem_00000000')]
     bsm.varb32list = [bsm.bvl.Bin32('DefaultBin32_CreatedByLanguageSystem_00000000')]
     bsm.initthis()
+    if mshell != 0:
+        print('\n  Variables Cleared  \n')
 
 cmd = ['scan', 'clear', 'quit', 'help']
 hlp_message = '\n  >>> help of \"Explorer SYS\" : \n       scan  : dispaly all current existing variables \n       clear : clear all current existing variables \n       help  : show this help message \n       quit  : quit the \"Explorer SYS\" \n'

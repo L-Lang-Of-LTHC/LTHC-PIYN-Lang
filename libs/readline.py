@@ -12,6 +12,8 @@ import libs.libraries.random.rand_sys as lrn
 import libs.libraries.binary.binary_sm as lbsm
 import libs.libraries.crossed.binary_random.rand_bin as lcbr
 
+import utils.explorer as ep
+import mainsys.shell as sh
 
 ##############
 # CONSTANTS
@@ -50,10 +52,13 @@ B8 = 'BIN8'
 B16 = 'BIN16'
 B32 = 'BIN32'
 
+# other
+NT = 'NATIVE'
+
 ############
 # METHODS
 ############
-def readline(line,inshell):
+def readline(line,inshell, mshell=0):
     if inshell:
         already = False
         if kl.hasKeyWord(line, V) and not already:
@@ -132,7 +137,11 @@ def readline(line,inshell):
         if kl.endLineRespected(line):
             line = line[0:-1]
             already = False
-            if kl.hasKeyWord(line, V) and not already:
+            if kl.hasKeyWord(line, NT) and not already:
+                line = line[len(NT):len(line)].replace(' ','')
+                nativeUse(line,mshell)
+                already = True
+            elif kl.hasKeyWord(line, V) and not already:
                 line = line[len(V):len(line)]
                 sm.varn(line)
                 already = True
@@ -243,3 +252,17 @@ def runBin(line, mode):
         elif kl.hasKeyWord(line, B32):
             line = line[len(B32):len(line)]
             lbsm.readline(line, 2)
+
+def nativeUse(line,mshell=0):
+    if line == 'ep.clear()':
+        ep.clear(mshell)
+    elif line == 'explorer.clear()':
+        ep.clear(mshell)
+    elif line == 'native:clear':
+        ep.clear(mshell)
+    elif line == 'sh.run()':
+        sh.run(mshell)
+    elif line == 'shell.run()':
+        sh.run(mshell)
+    elif line == 'native:shell':
+        sh.run(mshell)
