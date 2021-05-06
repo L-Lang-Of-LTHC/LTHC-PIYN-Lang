@@ -1,0 +1,16 @@
+BIN8 ab = 11111110;
+BIN16 bb = 1111111111111110;
+BIN32 cb = 11111111111111111111111111111110;
+^
+VARN a = 15;
+VARN b = 255;
+VARN c = 4095;
+^
+BIN8 ab #n a ;
+BIN16 bb #n b ;
+BIN32 cb #n c ;
+^
+BIN8 ab >;
+BIN16 bb >;
+BIN32 cb >;
+^

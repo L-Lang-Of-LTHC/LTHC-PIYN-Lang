@@ -25,7 +25,26 @@ def initthis():
 def readline(line, mode):
     if mode == 0:
         already = False
-        if '=n' in line and not already:
+        if '#n' in line and not already:
+            ls = line.split('#n')
+            isexist = False
+            isexist2 = False
+            for vb in varb8list:
+                if ls[0] == vb.getName():
+                    isexist = True
+                    for vn in sm.varnlist:
+                        if vn.getName() == ls[1]:
+                            isexist2 = True
+                            vb.setValueNum(abs(int(vn.getValue())))
+                            break
+                    break
+            if not isexist:
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+            else:
+                if not isexist2:
+                    print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+            already = True
+        elif '=n' in line and not already:
             ls = line.split('=n')
             isexist = False
             for vb in varb8list:
@@ -102,7 +121,26 @@ def readline(line, mode):
             already = True
     if mode == 1:
         already = False
-        if '=n' in line and not already:
+        if '#n' in line and not already:
+            ls = line.split('#n')
+            isexist = False
+            isexist2 = False
+            for vb in varb16list:
+                if ls[0] == vb.getName():
+                    isexist = True
+                    for vn in sm.varnlist:
+                        if vn.getName() == ls[1]:
+                            isexist2 = True
+                            vb.setValueNum(abs(int(vn.getValue())))
+                            break
+                    break
+            if not isexist:
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+            else:
+                if not isexist2:
+                    print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+            already = True
+        elif '=n' in line and not already:
             ls = line.split('=n')
             isexist = False
             for vb in varb16list:
@@ -179,7 +217,26 @@ def readline(line, mode):
             already = True
     if mode == 2:
         already = False
-        if '=n' in line and not already:
+        if '#n' in line and not already:
+            ls = line.split('#n')
+            isexist = False
+            isexist2 = False
+            for vb in varb32list:
+                if ls[0] == vb.getName():
+                    isexist = True
+                    for vn in sm.varnlist:
+                        if vn.getName() == ls[1]:
+                            isexist2 = True
+                            vb.setValueNum(abs(int(vn.getValue())))
+                            break
+                    break
+            if not isexist:
+                print('\nError: Binary: \n >> ' + ls[0] + ' << don\'t exist\n')
+            else:
+                if not isexist2:
+                    print('\nVARN Error: \n >> ' + ls[1] + ' << don\'t exist\n')
+            already = True
+        elif '=n' in line and not already:
             ls = line.split('=n')
             isexist = False
             for vb in varb32list:
